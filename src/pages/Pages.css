@@ -1,0 +1,14 @@
+.cards_section {
+  max-width: 1480px;
+  max-height: fit-content;
+  top: 479px;
+  padding: 80px, 250px, 80px, 250px;
+  gap: 10px;
+  background: rgba(242, 244, 247, 1);
+}
+.card_container {
+  max-width: 980px;
+  max-height: fit-content;
+  margin: auto;
+  padding: 55px 15px;
+}

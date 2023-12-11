@@ -1,5 +1,16 @@
+import { DailyDigestPage } from "./pages/DailyDigestPage";
+import { DesignToolsPage } from "./pages/DesignToolsPage";
+import { TutorialsPage } from "./pages/TutorialsPage";
 function App() {
-  return <h1>blog temp</h1>;
+  return (
+    <>
+      <DailyDigestPage />
+
+      {/* <DesignToolsPage /> */}
+
+      {/* <TutorialsPage /> */}
+    </>
+  );
 }
 
 export default App;

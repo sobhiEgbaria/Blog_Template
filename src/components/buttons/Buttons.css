@@ -1,0 +1,16 @@
+.MoreArticleButton {
+  width: 110px;
+  height: 44px;
+  padding: 12px, 14px, 12px, 14px;
+  border-radius: 8px;
+  margin: 50px 10px 50px 400px;
+
+  background-color: white;
+  border: solid 1px rgba(128, 128, 128, 0.322);
+}
+
+.MoreArticleButton:hover {
+  background-color: black;
+  color: white;
+  cursor: pointer;
+}
