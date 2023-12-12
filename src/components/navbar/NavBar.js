@@ -5,7 +5,7 @@ export const NavBar = () => {
     <>
       <div className="nav_container">
         <div className="logo">
-          <img src={logo} alt="" />
+          <img src={logo} alt="logo" />
         </div>
         <div className="right_elements">
           <ul>

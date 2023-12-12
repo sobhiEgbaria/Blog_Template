@@ -4,29 +4,41 @@
 }
 .HeaderContent {
   max-width: 1480px;
-  background-color: rgba(220, 220, 220, 0);
-  height: 395px;
-  padding: 120px 10px 10px 10px;
-  border-radius: 10px;
+  height: 566px;
+  top: 84px;
+  padding: 120px, 255px, 80px, 255px;
+  gap: 10px;
 }
 .content_frame {
   width: 970px;
-  height: 195px;
-  gap: 20px;
+  height: 366px;
+  gap: 40px;
   margin: auto;
   text-align: center;
   align-items: center;
 }
+.hi_button {
+  width: 190px;
+  height: 80px;
+  padding: 20px, 26px, 20px, 26px;
+  border-radius: 100px;
+  gap: 10px;
+  background: rgba(242, 244, 247, 1);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  letter-spacing: 0em;
+  text-align: center;
+}
 .content_frame .title {
-  width: 970px;
-  height: 91px;
-  margin-bottom: 25px;
+  width: fit-content;
+  height: fit-content;
 }
 
 .content_frame h1 {
   font-family: "Graphik Trial", sans-serif;
   font-weight: 700px;
-  font-size: 76px;
+  font-size: 66px;
   background: -webkit-linear-gradient(7.1deg, #c41740 4.8%, #ea9c28 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;

@@ -12,3 +12,7 @@
   margin: auto;
   padding: 55px 15px;
 }
+
+#HomePage h1 {
+  background-color: black;
+}

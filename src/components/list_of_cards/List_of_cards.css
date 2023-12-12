@@ -1,0 +1,12 @@
+.list_container {
+  width: 980px;
+  height: 886px;
+  border-radius: 8px;
+  border: 1px solid black;
+  margin: auto;
+}
+
+.list_head {
+  display: flex;
+  justify-content: space-between;
+}
