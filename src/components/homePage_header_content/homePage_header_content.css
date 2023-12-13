@@ -2,20 +2,20 @@
 * {
   font-family: "Graphik Trial", sans-serif;
 }
-.HeaderContent {
+.home_Page_Header_Content {
   max-width: 1480px;
-  height: 566px;
+  max-height: 566px;
   top: 84px;
   padding: 120px, 255px, 80px, 255px;
   gap: 10px;
 }
-.content_frame {
+.home_page_content_frame {
   width: 970px;
-  height: 366px;
+  max-height: 366px;
   gap: 40px;
-  margin: auto;
   text-align: center;
   align-items: center;
+  margin: 10% auto 5% auto;
 }
 .hi_button {
   width: 190px;
@@ -30,12 +30,12 @@
   letter-spacing: 0em;
   text-align: center;
 }
-.content_frame .title {
+.home_page_content_frame .title {
   width: fit-content;
   height: fit-content;
 }
 
-.content_frame h1 {
+.home_page_content_frame h1 {
   font-family: "Graphik Trial", sans-serif;
   font-weight: 700px;
   font-size: 66px;
@@ -44,7 +44,7 @@
   -webkit-text-fill-color: transparent;
 }
 
-.content_frame .desorption {
+.home_page_content_frame .desorption {
   width: 690px;
   height: 84px;
   margin: auto;
@@ -52,7 +52,7 @@
   align-items: center;
 }
 
-.content_frame p {
+.home_page_content_frame p {
   font-weight: 400px;
   font-size: 28px;
   line-height: 42px;
