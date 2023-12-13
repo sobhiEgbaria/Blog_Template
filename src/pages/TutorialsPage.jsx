@@ -1,5 +1,5 @@
 import { NavBar } from "../components/navbar/NavBar";
-import { HeaderContent } from "../components/header_content/HeaderContent";
+import { HeaderContent } from "../components/HeaderContent/HeaderContent";
 import { Card } from "../components/cards/Card";
 import img3 from "./imgs/3.jpg";
 import { Contacts } from "../components/contacts/Contacts";
