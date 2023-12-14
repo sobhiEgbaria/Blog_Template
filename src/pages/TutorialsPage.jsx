@@ -1,13 +1,16 @@
 import { NavBar } from "../components/navbar/NavBar";
 import { HeaderContent } from "../components/HeaderContent/HeaderContent";
-import { Card } from "../components/cards/Card";
-import img3 from "./imgs/3.jpg";
+import { ListOfCards } from "../components/listOfCards/List_of_cards";
 import { Contacts } from "../components/contacts/Contacts";
 import { CopyRight } from "../components/copyRight/CopyRight";
+import { MoreArticleButton } from "../components/buttons/Buttons";
+import { Data } from "../data/data";
+import { useState } from "react";
 
 import "./Pages.css";
 
 export const TutorialsPage = () => {
+  const [data, setData] = useState(Data);
   return (
     <>
       <NavBar />
@@ -15,13 +18,9 @@ export const TutorialsPage = () => {
         title="Tutorials"
         desorption="A description of the respective category goes right here. Be as expressive as possible, but in brief."
       />
-      <div className="cards_section">
-        <div className="card_container">
-          <Card img={img3} />
-          <Card img={img3} />
-          <Card img={img3} />
-        </div>
-      </div>
+      <ListOfCards data={data} />
+      <MoreArticleButton />
+
       <Contacts />
       <CopyRight />
     </>

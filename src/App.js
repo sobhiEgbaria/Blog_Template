@@ -1,17 +1,11 @@
+import { Outlet } from "react-router-dom";
 import { DailyDigestPage } from "./pages/DailyDigestPage";
-import { DesignToolsPage } from "./pages/DesignToolsPage";
-import { TutorialsPage } from "./pages/TutorialsPage";
-import { HomePage } from "./pages/HomePage";
+import { NotFound } from "./components/notFoundPage/notFoundPage";
+
 function App() {
   return (
     <>
-      <HomePage />
-
-      {/* <DailyDigestPage /> */}
-
-      {/* <DesignToolsPage /> */}
-
-      {/* <TutorialsPage /> */}
+      <Outlet />
     </>
   );
 }

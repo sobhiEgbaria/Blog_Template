@@ -6,17 +6,17 @@
   margin: 20px;
   padding: 20px;
   background-color: white;
-  width: 980px;
-  height: 260px;
-  top: 80px;
-  left: 250px;
+  max-width: 980px;
+  max-height: 260px;
+  top: 300px;
+  left: 20px;
 }
 .card:hover {
   cursor: pointer;
   border: solid 1px black;
 }
 
-.card .img img {
+.card img {
   width: 300px;
   height: 211.85px;
   top: 24px;
@@ -24,8 +24,7 @@
   border-radius: 10px;
 }
 .card .content {
-  display: flex;
-  flex-direction: column;
+  align-self: flex-start;
   width: 610px;
   height: 178px;
   top: 41px;
@@ -42,6 +41,7 @@
   letter-spacing: 0em;
   text-align: center;
   color: rgba(102, 112, 133, 1);
+  margin: 10px 0px;
 }
 
 .card .content .title {
@@ -51,9 +51,9 @@
   font-weight: 600;
   line-height: 34px;
   letter-spacing: 0em;
-  text-align: left;
   color: rgba(29, 41, 57, 1);
 }
+
 .card .content .description {
   width: 610px;
   height: 54px;

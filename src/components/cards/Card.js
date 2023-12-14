@@ -1,23 +1,19 @@
 import "./Card.css";
+import { Link } from "react-router-dom";
 
-export const Card = ({ img }) => {
+export const Card = ({ img, title, description, date, id }) => {
   return (
     <>
-      <div className="card">
-        <div className="content">
-          <p className="date">AUGust 13, 2021 </p>
-          <h3 className="title">
-            10 Hilarious Cartoons That Depict Real-Life Problems of Programmers
-          </h3>
-          <p className="description">
-            Redefined the user acquisition and redesigned the onboarding
-            experience, all within 3 working weeks.
-          </p>
-        </div>
-        <div className="img">
+      <Link to={`/${id}`}>
+        <div className="card">
+          <div className="content">
+            <p className="date">{date}</p>
+            <h3 className="title">{title}</h3>
+            <p className="description">{description}</p>
+          </div>
           <img src={img} alt="Avatar" />
         </div>
-      </div>
+      </Link>
     </>
   );
 };

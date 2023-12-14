@@ -2,6 +2,7 @@
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
+  text-decoration: none;
 }
 .nav_container {
   max-width: 1480px;
@@ -19,10 +20,6 @@
 }
 .nav_container {
   padding: 20px;
-}
-
-.nav_container a {
-  text-decoration: none;
 }
 
 .nav_container .logo {
@@ -56,4 +53,10 @@ button:focus {
 
 .nav_container li a {
   color: black;
+}
+
+.nav_container li a:hover {
+  background: -webkit-linear-gradient(7.1deg, #c41740 4.8%, #ea9c28 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }

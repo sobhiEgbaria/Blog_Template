@@ -1,13 +1,15 @@
+import "./Pages.css";
 import { NavBar } from "../components/navbar/NavBar";
 import { HeaderContent } from "../components/HeaderContent/HeaderContent";
-import { Card } from "../components/cards/Card";
 import { MoreArticleButton } from "../components/buttons/Buttons";
 import { Contacts } from "../components/contacts/Contacts";
 import { CopyRight } from "../components/copyRight/CopyRight";
-import "./Pages.css";
-import img1 from "./imgs/1.jpg";
+import { ListOfCards } from "../components/listOfCards/List_of_cards";
+import { Data } from "../data/data";
+import { useState } from "react";
 
 export const DailyDigestPage = () => {
+  const [data, setData] = useState(Data);
   return (
     <>
       <NavBar />
@@ -15,15 +17,8 @@ export const DailyDigestPage = () => {
         title="Daily Digest"
         desorption="A description of the respective category goes right here. Be as expressive as possible, but in brief."
       />
-
-      <div className="cards_section">
-        <div className="card_container">
-          <Card img={img1} />
-          <Card img={img1} />
-          <Card img={img1} />
-          <MoreArticleButton />
-        </div>
-      </div>
+      <ListOfCards data={data} />
+      <MoreArticleButton />
       <Contacts />
       <CopyRight />
     </>
