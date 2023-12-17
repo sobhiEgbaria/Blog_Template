@@ -30,20 +30,22 @@
   height: 24px;
 }
 
-.nav_container button {
+.nav_container .subsBtn {
   list-style: none;
   margin: 0px 50px 0px 100px;
   padding: 10px;
-  background-color: black;
   border-radius: 10px;
   border: none;
+  color: white;
+  background: rgba(29, 41, 57, 1);
 }
-button:focus {
+.subsBtn:focus {
   border: none;
   outline: none;
 }
-.nav_container button a {
-  color: white;
+
+.nav_container .subsBtn:hover {
+  cursor: pointer;
 }
 
 .nav_container li {
@@ -59,4 +61,15 @@ button:focus {
   background: -webkit-linear-gradient(7.1deg, #c41740 4.8%, #ea9c28 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+.add_blog {
+  font-weight: bolder;
+  background: -webkit-linear-gradient(7.1deg, #c41740 4.8%, #ea9c28 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+#subsLink {
+  color: black;
 }

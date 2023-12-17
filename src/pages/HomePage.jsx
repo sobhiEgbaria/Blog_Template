@@ -4,13 +4,12 @@ import { ListOfCards } from "../components/listOfCards/List_of_cards";
 import { HomePageButton } from "../components/buttons/Buttons";
 import { Contacts } from "../components/contacts/Contacts";
 import { CopyRight } from "../components/copyRight/CopyRight";
-import { Data } from "../data/data";
-import { useState } from "react";
-
-const random_blogs = [Data[0], Data[1], Data[2]];
+import { BlogContext } from "../providers/blog-providers";
+import { useContext } from "react";
 
 export const HomePage = () => {
-  const [data, setData] = useState(random_blogs);
+  const data = useContext(BlogContext);
+
   return (
     <div id="HomePage">
       <NavBar />

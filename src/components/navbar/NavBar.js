@@ -1,7 +1,11 @@
 import logo from "./imgs/logo.png";
 import "../navbar/NavBar.css";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../providers/AuthProviders";
+import { useContext } from "react";
+
 export const NavBar = () => {
+  const { user, signIn } = useContext(AuthContext);
   return (
     <>
       <div className="nav_container">
@@ -23,9 +27,21 @@ export const NavBar = () => {
               <Link to="/Tutorials">Tutorials</Link>
             </li>
           </ul>
-          <button>
-            <Link to="/">Subscribe</Link>
-          </button>
+
+          <span>
+            {user ? (
+              <>
+                <Link to="/AddBlog" id="subsLink">
+                  Add Blog <i class="fa-solid fa-plus"></i> &nbsp; &nbsp;
+                </Link>
+                <span className="add_blog">Welcome {user.userName}</span>
+              </>
+            ) : (
+              <button className="subsBtn" onClick={signIn}>
+                subscribe
+              </button>
+            )}
+          </span>
         </div>
       </div>
     </>

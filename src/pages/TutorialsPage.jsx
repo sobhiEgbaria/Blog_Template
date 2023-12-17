@@ -1,16 +1,16 @@
+import "./Pages.css";
 import { NavBar } from "../components/navbar/NavBar";
 import { HeaderContent } from "../components/HeaderContent/HeaderContent";
 import { ListOfCards } from "../components/listOfCards/List_of_cards";
 import { Contacts } from "../components/contacts/Contacts";
 import { CopyRight } from "../components/copyRight/CopyRight";
 import { MoreArticleButton } from "../components/buttons/Buttons";
-import { Data } from "../data/data";
-import { useState } from "react";
-
-import "./Pages.css";
+import { BlogContext } from "../providers/blog-providers";
+import { useContext } from "react";
 
 export const TutorialsPage = () => {
-  const [data, setData] = useState(Data);
+  const data = useContext(BlogContext);
+
   return (
     <>
       <NavBar />
