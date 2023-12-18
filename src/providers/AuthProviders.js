@@ -6,11 +6,14 @@ export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
 
   const signIn = ({ userName, password }) => {
-    // check if valid
     setUser({ userName: "Sobhi" });
   };
 
-  const value = { user, signIn };
+  const logOut = () => {
+    setUser(null);
+  };
+
+  const value = { user, signIn, logOut };
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 };

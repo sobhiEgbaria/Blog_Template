@@ -9,7 +9,7 @@ import { BlogContext } from "../providers/blog-providers";
 import { useContext } from "react";
 
 export const DailyDigestPage = () => {
-  const data = useContext(BlogContext);
+  const { data } = useContext(BlogContext);
 
   return (
     <>

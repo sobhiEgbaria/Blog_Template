@@ -6,9 +6,10 @@ import { Contacts } from "../components/contacts/Contacts";
 import { CopyRight } from "../components/copyRight/CopyRight";
 import { BlogContext } from "../providers/blog-providers";
 import { useContext } from "react";
+import { useState } from "react";
 
 export const HomePage = () => {
-  const data = useContext(BlogContext);
+  const { data } = useContext(BlogContext);
 
   return (
     <div id="HomePage">
@@ -18,13 +19,13 @@ export const HomePage = () => {
         desorption="100% customisable and SEO-friendly blog template for personal and commercial purposes."
       />
       <HomePageButton title="Daily Digest" />
-      <ListOfCards data={data} />
+      <ListOfCards data={data.slice(0, 3)} />
 
       <HomePageButton title="Design Tools" />
-      <ListOfCards data={data} />
+      <ListOfCards data={data.slice(3, 6)} />
 
       <HomePageButton title="Tutorials" />
-      <ListOfCards data={data} />
+      <ListOfCards data={data.slice(6, 9)} />
       <Contacts />
       <CopyRight />
     </div>

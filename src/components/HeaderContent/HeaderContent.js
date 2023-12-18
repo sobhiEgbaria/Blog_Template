@@ -11,6 +11,7 @@ export const HeaderContent = ({ title, desorption }) => {
           <div className="desorption">
             <p>{desorption}</p>
           </div>
+          <input type="text" placeholder="search for a blog" />
         </div>
       </div>
     </>

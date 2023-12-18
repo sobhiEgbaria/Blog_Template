@@ -5,7 +5,7 @@ import { TutorialsPage } from "./pages/TutorialsPage";
 import { HomePage } from "./pages/HomePage";
 import { SingleArticle } from "./pages/SingleArticle";
 import { createBrowserRouter } from "react-router-dom";
-import { AddBlog } from "./pages/AddBlog";
+import { AddBlogPage } from "./pages/AddBlogPage";
 import App from "./App";
 
 export const router = createBrowserRouter([
@@ -48,7 +48,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "/AddBlog",
-        element: <AddBlog />,
+        element: <AddBlogPage />,
       },
     ],
   },

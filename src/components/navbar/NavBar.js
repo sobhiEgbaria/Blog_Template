@@ -5,7 +5,7 @@ import { AuthContext } from "../../providers/AuthProviders";
 import { useContext } from "react";
 
 export const NavBar = () => {
-  const { user, signIn } = useContext(AuthContext);
+  const { user, signIn, logOut } = useContext(AuthContext);
   return (
     <>
       <div className="nav_container">
@@ -34,7 +34,9 @@ export const NavBar = () => {
                 <Link to="/AddBlog" id="subsLink">
                   Add Blog <i class="fa-solid fa-plus"></i> &nbsp; &nbsp;
                 </Link>
-                <span className="add_blog">Welcome {user.userName}</span>
+                <Link className="add_blog" onClick={logOut} to="/">
+                  {user.userName} <i class="fa-solid fa-right-from-bracket"></i>
+                </Link>
               </>
             ) : (
               <button className="subsBtn" onClick={signIn}>

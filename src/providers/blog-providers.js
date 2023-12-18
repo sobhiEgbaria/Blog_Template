@@ -10,5 +10,13 @@ export const BlogProvider = ({ children }) => {
     setData(Data);
   }, []);
 
-  return <BlogContext.Provider value={data}>{children} </BlogContext.Provider>;
+  const addBlog = (post) => {
+    setData([post, ...data]);
+  };
+
+  return (
+    <BlogContext.Provider value={{ data, addBlog }}>
+      {children}{" "}
+    </BlogContext.Provider>
+  );
 };

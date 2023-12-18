@@ -69,6 +69,9 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+.add_blog:hover {
+  cursor: pointer;
+}
 
 #subsLink {
   color: black;
