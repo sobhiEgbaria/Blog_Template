@@ -1,12 +1,11 @@
 import { NavBar } from "../components/navbar/NavBar";
 import { HomePageHeaderContent } from "../components/homePage_header_content/HomePageHeaderContent";
 import { ListOfCards } from "../components/listOfCards/List_of_cards";
-import { HomePageButton } from "../components/buttons/Buttons";
+import { ViewAll } from "../components/buttons/Buttons";
 import { Contacts } from "../components/contacts/Contacts";
 import { CopyRight } from "../components/copyRight/CopyRight";
 import { BlogContext } from "../providers/blog-providers";
 import { useContext } from "react";
-import { useState } from "react";
 
 export const HomePage = () => {
   const { data } = useContext(BlogContext);
@@ -18,13 +17,13 @@ export const HomePage = () => {
         title="Minimal blog template for creative expressions"
         description="100% customisable and SEO-friendly blog template for personal and commercial purposes."
       />
-      <HomePageButton title="Daily Digest" />
+      <ViewAll title="Daily Digest" />
       <ListOfCards data={data.slice(0, 3)} />
 
-      <HomePageButton title="Design Tools" />
+      <ViewAll title="Design Tools" />
       <ListOfCards data={data.slice(3, 6)} />
 
-      <HomePageButton title="Tutorials" />
+      <ViewAll title="Tutorials" />
       <ListOfCards data={data.slice(6, 9)} />
       <Contacts />
       <CopyRight />

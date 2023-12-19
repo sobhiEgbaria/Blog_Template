@@ -9,7 +9,12 @@ export const Contacts = () => {
           A bi-weekly newsletter of design inspiration, resources and anything
           related to career development.
         </p>
-        <form className="footer_form">
+        <form
+          className="footer_form"
+          onSubmit={(e) => {
+            e.preventDefault();
+          }}
+        >
           <input
             type="email"
             placeholder="Email Address"

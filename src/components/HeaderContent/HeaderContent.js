@@ -1,7 +1,6 @@
 import "./HeaderContent.css";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { BlogContext } from "../../providers/blog-providers";
-import { useState } from "react";
 
 export const HeaderContent = ({ title, description }) => {
   const [term, setTerm] = useState("");

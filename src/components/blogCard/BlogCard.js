@@ -1,7 +1,7 @@
-import "./Card.css";
+import "./BlogCard.css";
 import { Link } from "react-router-dom";
 
-export const Card = ({ img, title, description, date, id }) => {
+export const BlogCard = ({ img, title, description, date, id }) => {
   return (
     <>
       <Link to={`/${id}`}>

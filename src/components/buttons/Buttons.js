@@ -1,5 +1,6 @@
 import "./Buttons.css";
 import { Link } from "react-router-dom";
+
 export const MoreArticleButton = () => {
   return (
     <>
@@ -10,7 +11,7 @@ export const MoreArticleButton = () => {
   );
 };
 
-export const HomePageButton = ({ title }) => {
+export const ViewAll = ({ title }) => {
   return (
     <>
       <div className="HomePageButton_container">

@@ -1,5 +1,6 @@
 import "./List_of_cards.css";
-import { Card } from "../cards/Card";
+import { BlogCard } from "../blogCard/BlogCard";
+
 export const ListOfCards = ({ data }) => {
   return (
     <>
@@ -7,7 +8,7 @@ export const ListOfCards = ({ data }) => {
         <div className="list_container">
           {data.map((data) => (
             <div>
-              <Card
+              <BlogCard
                 img={data.img}
                 title={data.title}
                 description={data.description}

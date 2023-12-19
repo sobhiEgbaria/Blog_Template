@@ -1,8 +1,6 @@
 import "./AddBlog.css";
-import { useState, useEffect } from "react";
-import { useContext } from "react";
+import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
-
 import { BlogContext } from "../../providers/blog-providers";
 import img from "../notFoundPage/404.jpeg";
 
@@ -10,23 +8,22 @@ export const AddBlog = () => {
   const navigate = useNavigate();
   const { addBlog } = useContext(BlogContext);
 
-  const [newBlog, setNewBlog] = useState("");
+  const [newBlogTitle, setNewBlogTitle] = useState("");
   const [description, setDescription] = useState("");
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    // add not adding in enter
   };
 
   const handleOnClickAddBlog = () => {
     addBlog({
       id: Date.now(),
-      title: newBlog,
+      title: newBlogTitle,
       date: new Date().toLocaleDateString("en-ZA"),
       description: description,
       img: img,
     });
-    setNewBlog("");
+    setNewBlogTitle("");
     setDescription("");
     navigate("/");
   };
@@ -36,8 +33,9 @@ export const AddBlog = () => {
   };
 
   const handelInput = (event) => {
-    setNewBlog(event.target.value);
+    setNewBlogTitle(event.target.value);
   };
+
   const handelText = (event) => {
     setDescription(event.target.value);
   };
@@ -53,7 +51,7 @@ export const AddBlog = () => {
             <div>
               <input
                 className="addBlogInput"
-                value={newBlog}
+                value={newBlogTitle}
                 type="text"
                 placeholder="Blog Title"
                 onChange={handelInput}
