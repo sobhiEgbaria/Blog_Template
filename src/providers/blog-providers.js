@@ -7,9 +7,16 @@ export const BlogProvider = ({ children }) => {
   const [data, setData] = useState(Data);
   const [fullData, setFullData] = useState(Data);
 
+  useEffect(() => {
+    const stringData = JSON.parse(localStorage.getItem("fullData"));
+    setData(stringData);
+    setFullData(stringData);
+  }, []);
+
   const addBlog = (post) => {
     setData([post, ...data]);
     fullData.unshift(post);
+    localStorage.setItem("fullData", JSON.stringify(fullData));
   };
 
   const searchBlog = (term) => {

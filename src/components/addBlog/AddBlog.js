@@ -8,15 +8,19 @@ import img from "../notFoundPage/404.jpeg";
 
 export const AddBlog = () => {
   const navigate = useNavigate();
+  const { addBlog } = useContext(BlogContext);
 
   const [newBlog, setNewBlog] = useState("");
   const [description, setDescription] = useState("");
-  const { addBlog } = useContext(BlogContext);
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    // add not adding in enter
+  };
+
+  const handleOnClickAddBlog = () => {
     addBlog({
-      id: 1,
+      id: Date.now(),
       title: newBlog,
       date: new Date().toLocaleDateString("en-ZA"),
       description: description,
@@ -27,20 +31,16 @@ export const AddBlog = () => {
     navigate("/");
   };
 
+  const handleOnClickEditBlog = () => {
+    console.log("gogo lolo");
+  };
+
   const handelInput = (event) => {
     setNewBlog(event.target.value);
   };
   const handelText = (event) => {
     setDescription(event.target.value);
   };
-
-  // useEffect(() => {
-  //   if (newBlog !== "") {
-  //     return () => {
-  //       const confirms = window.confirm("you done");
-  //     };
-  //   }
-  // }, []);
 
   return (
     <>
@@ -71,7 +71,8 @@ export const AddBlog = () => {
                 onChange={handelText}
               ></textarea>
             </div>
-            <button>Add Blog</button>
+            <button onClick={handleOnClickAddBlog}>Add Blog</button>
+            <button onClick={handleOnClickEditBlog}>Edit Blog</button>
           </form>
         </div>
       </div>
