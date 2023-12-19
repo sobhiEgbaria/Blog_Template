@@ -1,11 +1,14 @@
 import "./AddBlog.css";
-import { Data } from "../../data/data";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useContext } from "react";
+import { useNavigate } from "react-router-dom";
+
 import { BlogContext } from "../../providers/blog-providers";
 import img from "../notFoundPage/404.jpeg";
 
 export const AddBlog = () => {
+  const navigate = useNavigate();
+
   const [newBlog, setNewBlog] = useState("");
   const [description, setDescription] = useState("");
   const { addBlog } = useContext(BlogContext);
@@ -21,6 +24,7 @@ export const AddBlog = () => {
     });
     setNewBlog("");
     setDescription("");
+    navigate("/");
   };
 
   const handelInput = (event) => {
@@ -30,12 +34,20 @@ export const AddBlog = () => {
     setDescription(event.target.value);
   };
 
+  // useEffect(() => {
+  //   if (newBlog !== "") {
+  //     return () => {
+  //       const confirms = window.confirm("you done");
+  //     };
+  //   }
+  // }, []);
+
   return (
     <>
       <div className="BlogHeaderContent">
         <div className="content_frame">
           <div className="title">
-            <h1>Welcome To Add Blog</h1>
+            <h1>Share Your Blog With Us</h1>
           </div>
           <form className="form" onSubmit={handleSubmit}>
             <div>
@@ -49,6 +61,7 @@ export const AddBlog = () => {
             </div>
             <div>
               <textarea
+                value={description}
                 className="addBlogText"
                 name="describtion"
                 id=""
@@ -58,6 +71,7 @@ export const AddBlog = () => {
                 onChange={handelText}
               ></textarea>
             </div>
+            <button>Add Blog</button>
           </form>
         </div>
       </div>

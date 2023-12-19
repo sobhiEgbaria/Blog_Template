@@ -1,6 +1,6 @@
 import "./HomePageHeaderContent.css";
 
-export const HomePageHeaderContent = ({ title, desorption }) => {
+export const HomePageHeaderContent = ({ title, description }) => {
   return (
     <>
       <div className="home_Page_Header_Content">
@@ -9,8 +9,8 @@ export const HomePageHeaderContent = ({ title, desorption }) => {
             <span className="hi_button">👋 Meet Personally</span>
             <h1>{title}</h1>
           </div>
-          <div className="desorption">
-            <p>{desorption}</p>
+          <div className="description">
+            <p>{description}</p>
           </div>
         </div>
       </div>

@@ -1,6 +1,17 @@
 import "./HeaderContent.css";
+import { useContext } from "react";
+import { BlogContext } from "../../providers/blog-providers";
+import { useState } from "react";
 
-export const HeaderContent = ({ title, desorption }) => {
+export const HeaderContent = ({ title, description }) => {
+  const [term, setTerm] = useState("");
+  const { searchBlog } = useContext(BlogContext);
+
+  const handleSearchInput = (e) => {
+    setTerm(e.target.value);
+    searchBlog(e.target.value);
+  };
+
   return (
     <>
       <div className="HeaderContent">
@@ -8,10 +19,16 @@ export const HeaderContent = ({ title, desorption }) => {
           <div className="title">
             <h1>{title}</h1>
           </div>
-          <div className="desorption">
-            <p>{desorption}</p>
+          <div className="description">
+            <p>{description}</p>
           </div>
-          <input type="text" placeholder="search for a blog" />
+          <input
+            value={term}
+            className="searchInput"
+            type="text"
+            placeholder="search for a blog"
+            onChange={handleSearchInput}
+          />
         </div>
       </div>
     </>

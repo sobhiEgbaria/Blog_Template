@@ -4,10 +4,11 @@
 }
 .BlogHeaderContent {
   max-width: 1480px;
-  background-color: rgba(220, 220, 220, 0);
-  height: 495px;
-  padding: 100px 10px 10px 10px;
-  border-radius: 10px;
+  background-color: rgba(220, 220, 220, 0.196);
+  height: 650px;
+  padding: 50px 10px 10px 10px;
+  margin-bottom: 100px;
+  overflow: auto;
 }
 .content_frame {
   width: 970px;
@@ -26,22 +27,24 @@
 .content_frame h1 {
   font-family: "Graphik Trial", sans-serif;
   font-weight: 700px;
-  font-size: 76px;
+  font-size: 46px;
   background: -webkit-linear-gradient(7.1deg, #c41740 4.8%, #ea9c28 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .content_frame .form {
-  width: 690px;
-  height: 284px;
-  margin: auto;
+  width: 790px;
+  height: 420px;
+  margin: 20px auto auto auto;
   text-align: center;
   align-items: center;
-  background-color: rgba(128, 128, 128, 0.041);
   border-radius: 10px;
   display: grid;
   align-items: center;
+  background-color: rgba(220, 220, 220, 0.696);
+
+  overflow: auto;
 }
 
 .content_frame p {
@@ -70,4 +73,20 @@
   border: 1px solid gray;
   background-color: rgba(255, 250, 250, 0.753);
   resize: none;
+}
+
+.BlogHeaderContent button {
+  margin: 10px auto;
+  padding: 10px;
+  border-radius: 10px;
+  outline: none;
+  width: 50%;
+  border: 1px solid gray;
+  background-color: rgba(255, 250, 250, 0.753);
+}
+
+.BlogHeaderContent button:hover {
+  background-color: rgba(67, 170, 67, 0.881);
+  color: black;
+  cursor: pointer;
 }

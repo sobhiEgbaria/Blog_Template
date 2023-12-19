@@ -16,7 +16,7 @@ export const HomePage = () => {
       <NavBar />
       <HomePageHeaderContent
         title="Minimal blog template for creative expressions"
-        desorption="100% customisable and SEO-friendly blog template for personal and commercial purposes."
+        description="100% customisable and SEO-friendly blog template for personal and commercial purposes."
       />
       <HomePageButton title="Daily Digest" />
       <ListOfCards data={data.slice(0, 3)} />

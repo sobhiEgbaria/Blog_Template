@@ -16,7 +16,7 @@ export const DesignToolsPage = () => {
       <NavBar />
       <HeaderContent
         title="Design Tools"
-        desorption="A description of the respective category goes right here. Be as expressive as possible, but in brief."
+        description="A description of the respective category goes right here. Be as expressive as possible, but in brief."
       />
       <ListOfCards data={data} />
       <MoreArticleButton />

@@ -6,8 +6,8 @@
   max-width: 1480px;
   background-color: rgba(220, 220, 220, 0);
   height: 395px;
-  padding: 100px 10px 10px 10px;
-  border-radius: 10px;
+  padding: 50px 10px 0px 10px;
+  overflow: auto;
 }
 .content_frame {
   width: 970px;
@@ -20,7 +20,7 @@
 .content_frame .title {
   width: 970px;
   height: 91px;
-  margin-bottom: 25px;
+  margin-bottom: 15px;
 }
 
 .content_frame h1 {
@@ -32,7 +32,7 @@
   -webkit-text-fill-color: transparent;
 }
 
-.content_frame .desorption {
+.content_frame .description {
   width: 690px;
   height: 84px;
   margin: auto;
@@ -45,4 +45,16 @@
   font-size: 28px;
   line-height: 42px;
   color: rgba(71, 84, 103, 1);
+}
+
+.HeaderContent .content_frame .searchInput {
+  margin: 15px;
+  padding: 15px;
+  border-radius: 10px;
+  outline: none;
+  width: 50%;
+  border: 1px solid #c41740;
+  background: -webkit-linear-gradient(7.1deg, #c41740 4.8%, #ea9c28 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }

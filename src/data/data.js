@@ -1,7 +1,7 @@
 export const Data = [
   {
     id: 1,
-    title: "id labore ex et quam laborum",
+    title: "One Piece is a Japanese manga and anime",
     date: new Date().toLocaleDateString("en-ZA"),
     description:
       "laudantium enim quasi est quidem magnam voluptate ipsam eos\ntempora quo necessitatibus\ndolor quam autem quasi\nreiciendis et nam sapiente accusantium",
