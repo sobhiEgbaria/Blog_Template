@@ -7,7 +7,7 @@ export const ListOfCards = ({ data }) => {
       <div className="cards_section">
         <div className="list_container">
           {data.map((data) => (
-            <div>
+            <div key={data.id}>
               <BlogCard
                 img={data.img}
                 title={data.title}

@@ -13,10 +13,10 @@ export const BlogCard = ({ img, title, description, date, id }) => {
           <p className="date">{date}</p>
           <h3 className="title">{title}</h3>
           <p className="description">
-            {description}{" "}
+            {description}
             <span>
               <Link onClick={scrollWin} className="cardLink" to={`/${id}`}>
-                SEE MORE
+                &nbsp; Read More<i class="fa-solid fa-angles-right"></i>
               </Link>
             </span>
           </p>

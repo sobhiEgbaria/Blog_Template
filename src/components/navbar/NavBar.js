@@ -6,6 +6,11 @@ import { useContext } from "react";
 
 export const NavBar = () => {
   const { user, signIn, logOut } = useContext(AuthContext);
+
+  const handelScroll = () => {
+    window.scrollTo(0, 100);
+  };
+
   return (
     <>
       <div className="nav_container">
@@ -31,7 +36,7 @@ export const NavBar = () => {
           <span>
             {user ? (
               <>
-                <Link to="/AddBlog" id="subsLink">
+                <Link onClick={handelScroll} to="/AddBlog" id="subsLink">
                   Add Blog <i class="fa-solid fa-plus"></i> &nbsp; &nbsp;
                 </Link>
                 <Link className="add_blog" onClick={logOut} to="/">

@@ -25,7 +25,7 @@ export const HeaderContent = ({ title, description }) => {
             value={term}
             className="searchInput"
             type="text"
-            placeholder="search for a blog"
+            placeholder="Search for a Blog"
             onChange={handleSearchInput}
           />
         </div>

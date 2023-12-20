@@ -12,6 +12,10 @@ export const SingleBlogPageHeader = ({
     deleteBlogById(id);
   };
 
+  const handelScroll = () => {
+    window.scrollTo(0, 100);
+  };
+
   return (
     <>
       <div className="singlePageContainer">
@@ -23,7 +27,7 @@ export const SingleBlogPageHeader = ({
             <Link to="/" onClick={handelDeleteClick}>
               <i class="fa-solid fa-trash"></i>
             </Link>
-            <Link to={`/EditBlogPage/${id}`}>
+            <Link onClick={handelScroll} to={`/EditBlogPage/${id}`}>
               <i class="fa-solid fa-pen-to-square"></i>
             </Link>
           </div>

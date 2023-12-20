@@ -2,7 +2,7 @@ import "./addAndEditBlog.css";
 import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { BlogContext } from "../../providers/blog-providers";
-import img from "../notFoundPage/404.jpeg";
+import img from "./Blog.jpg";
 
 export const AddAndEditBlog = ({
   buttonText,
@@ -10,6 +10,7 @@ export const AddAndEditBlog = ({
   description,
   hederTitle,
   EditedBlogId,
+  PhotoSearch,
 }) => {
   const navigate = useNavigate();
   const { addBlog, editBlogById } = useContext(BlogContext);
@@ -25,7 +26,7 @@ export const AddAndEditBlog = ({
     event.preventDefault();
   };
 
-  const handleOnClickAddBlog = () => {
+  const handleOnClickAddBlog = async () => {
     addBlog({
       id: Date.now(),
       title: newBlogTitle,
