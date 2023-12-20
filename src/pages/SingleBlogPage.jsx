@@ -5,10 +5,10 @@ import { BlogContext } from "../providers/blog-providers";
 import { ListOfCards } from "../components/listOfCards/List_of_cards";
 import { useContext } from "react";
 import { useParams } from "react-router-dom";
-import { SinglePageHeader } from "../components/singlePageHeader/singlePageHeader";
+import { SingleBlogPageHeader } from "../components/singleBlogPageHeader/singleBlogPageHeader";
 
-export const SingleArticle = () => {
-  const { data } = useContext(BlogContext);
+export const SingleBlogPage = () => {
+  const { data, deleteBlogById } = useContext(BlogContext);
 
   const params = useParams();
   const id = parseInt(params.id);
@@ -20,10 +20,12 @@ export const SingleArticle = () => {
   return (
     <>
       <NavBar />
-      <SinglePageHeader
+      <SingleBlogPageHeader
+        id={blog.id}
         img={blog.img}
         description={blog.description}
         title={blog.title}
+        deleteBlogById={deleteBlogById}
       />
       <ListOfCards data={data.slice(0, 3)} />
       <Contacts />

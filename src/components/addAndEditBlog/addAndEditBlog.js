@@ -1,15 +1,21 @@
-import "./AddBlog.css";
+import "./addAndEditBlog.css";
 import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { BlogContext } from "../../providers/blog-providers";
 import img from "../notFoundPage/404.jpeg";
 
-export const AddBlog = () => {
+export const AddAndEditBlog = ({
+  buttonText,
+  title,
+  description,
+  hederTitle,
+  EditedBlogId,
+}) => {
   const navigate = useNavigate();
-  const { addBlog } = useContext(BlogContext);
+  const { addBlog, editBlogById } = useContext(BlogContext);
 
-  const [newBlogTitle, setNewBlogTitle] = useState("");
-  const [description, setDescription] = useState("");
+  const [newBlogTitle, setNewBlogTitle] = useState(title);
+  const [newBlogDescription, setNewBlogDescription] = useState(description);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -20,16 +26,18 @@ export const AddBlog = () => {
       id: Date.now(),
       title: newBlogTitle,
       date: new Date().toLocaleDateString("en-ZA"),
-      description: description,
+      description: newBlogDescription,
       img: img,
     });
     setNewBlogTitle("");
-    setDescription("");
+    setNewBlogDescription("");
     navigate("/");
   };
 
   const handleOnClickEditBlog = () => {
-    console.log("gogo lolo");
+    editBlogById(EditedBlogId, newBlogTitle, newBlogDescription);
+    console.log(EditedBlogId);
+    navigate("/");
   };
 
   const handelInput = (event) => {
@@ -37,7 +45,7 @@ export const AddBlog = () => {
   };
 
   const handelText = (event) => {
-    setDescription(event.target.value);
+    setNewBlogDescription(event.target.value);
   };
 
   return (
@@ -45,7 +53,7 @@ export const AddBlog = () => {
       <div className="BlogHeaderContent">
         <div className="content_frame">
           <div className="title">
-            <h1>Share Your Blog With Us</h1>
+            <h1>{hederTitle}</h1>
           </div>
           <form className="form" onSubmit={handleSubmit}>
             <div>
@@ -59,7 +67,7 @@ export const AddBlog = () => {
             </div>
             <div>
               <textarea
-                value={description}
+                value={newBlogDescription}
                 className="addBlogText"
                 name="describtion"
                 id=""
@@ -69,8 +77,15 @@ export const AddBlog = () => {
                 onChange={handelText}
               ></textarea>
             </div>
-            <button onClick={handleOnClickAddBlog}>Add Blog</button>
-            <button onClick={handleOnClickEditBlog}>Edit Blog</button>
+            <button
+              onClick={
+                buttonText === "Add Blog"
+                  ? handleOnClickAddBlog
+                  : handleOnClickEditBlog
+              }
+            >
+              {buttonText}
+            </button>
           </form>
         </div>
       </div>

@@ -5,10 +5,12 @@
   top: 502px;
   padding: 0px, 250px, 100px, 250px;
   gap: 10px;
+  display: grid;
 }
 .singlePageContainer .singlePageImg {
   width: 500px;
   height: 400px;
+  margin: auto;
   margin: 20px 290px;
 }
 .singlePageContainer .title {
@@ -31,4 +33,24 @@
   width: 50%;
   margin: auto;
   text-align: center;
+}
+
+.edit_remove_icons {
+  width: 150px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.edit_remove_icons i {
+  font-size: 35px;
+
+  color: grey;
+}
+
+.edit_remove_icons i:hover {
+  font-size: 35px;
+  cursor: pointer;
+  color: red;
 }

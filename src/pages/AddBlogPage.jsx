@@ -1,13 +1,18 @@
 import { NavBar } from "../components/navbar/NavBar";
 import { Contacts } from "../components/contacts/Contacts";
 import { CopyRight } from "../components/copyRight/CopyRight";
-import { AddBlog } from "../components/addBlog/AddBlog";
+import { AddAndEditBlog } from "../components/addAndEditBlog/addAndEditBlog";
 
 export const AddBlogPage = () => {
   return (
     <>
       <NavBar />
-      <AddBlog />
+      <AddAndEditBlog
+        buttonText={"Add Blog"}
+        title={""}
+        description={""}
+        hederTitle={"Share Your Blog With Us"}
+      />
       <Contacts />
       <CopyRight />
     </>

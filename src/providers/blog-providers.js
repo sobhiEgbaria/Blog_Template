@@ -7,16 +7,35 @@ export const BlogProvider = ({ children }) => {
   const [data, setData] = useState(Data);
   const [fullData, setFullData] = useState(Data);
 
-  useEffect(() => {
-    const stringData = JSON.parse(localStorage.getItem("fullData"));
-    setData(stringData);
-    setFullData(stringData);
-  }, []);
-
   const addBlog = (post) => {
     setData([post, ...data]);
     fullData.unshift(post);
-    localStorage.setItem("fullData", JSON.stringify(fullData));
+    // localStorage.setItem("fullData", JSON.stringify(fullData));
+  };
+
+  const deleteBlogById = (id) => {
+    const updatedData = fullData.filter((blog) => {
+      return blog.id !== id;
+    });
+    setData([...updatedData]);
+    setFullData([...updatedData]);
+  };
+
+  const editBlogById = (id, title, description) => {
+    const updatedData = fullData.map((blog) => {
+      if (blog.id === id) {
+        return {
+          ...blog,
+          title: title,
+          description: description,
+          id: id,
+        };
+      }
+
+      return blog;
+    });
+    setData([...updatedData]);
+    setFullData([...updatedData]);
   };
 
   const searchBlog = (term) => {
@@ -33,8 +52,16 @@ export const BlogProvider = ({ children }) => {
     }
   };
 
+  // useEffect(() => {
+  //   const stringData = JSON.parse(localStorage.getItem("fullData"));
+  //   setData(stringData);
+  //   setFullData(stringData);
+  // }, []);
+
   return (
-    <BlogContext.Provider value={{ data, addBlog, searchBlog }}>
+    <BlogContext.Provider
+      value={{ data, addBlog, searchBlog, deleteBlogById, editBlogById }}
+    >
       {children}
     </BlogContext.Provider>
   );

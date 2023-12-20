@@ -40,7 +40,7 @@ export const NavBar = () => {
               </>
             ) : (
               <button className="subsBtn" onClick={signIn}>
-                subscribe
+                SingIn
               </button>
             )}
           </span>

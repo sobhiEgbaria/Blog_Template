@@ -12,10 +12,25 @@
   left: 20px;
 }
 .card:hover {
-  cursor: pointer;
   border: solid 1px black;
 }
 
+.card .cardLink {
+  color: blue;
+  padding: 2px;
+  border-radius: 10px;
+  background-color: rgba(128, 128, 128, 0.071);
+  font-size: small;
+}
+.card .cardLink:hover {
+  cursor: pointer;
+  border-bottom: 1px solid black;
+  padding: 5px;
+  margin: 2px;
+  background: -webkit-linear-gradient(7.1deg, #c41740 4.8%, #ea9c28 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 .card img {
   width: 300px;
   height: 211.85px;

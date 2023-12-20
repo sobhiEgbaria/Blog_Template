@@ -3,9 +3,10 @@ import { DailyDigestPage } from "./pages/DailyDigestPage";
 import { DesignToolsPage } from "./pages/DesignToolsPage";
 import { TutorialsPage } from "./pages/TutorialsPage";
 import { HomePage } from "./pages/HomePage";
-import { SingleArticle } from "./pages/SingleArticle";
+import { SingleBlogPage } from "./pages/SingleBlogPage";
 import { createBrowserRouter } from "react-router-dom";
 import { AddBlogPage } from "./pages/AddBlogPage";
+import { EditBlogPage } from "./pages/EditBlogPage";
 import App from "./App";
 
 export const router = createBrowserRouter([
@@ -32,23 +33,27 @@ export const router = createBrowserRouter([
       },
       {
         path: `/Tutorials/:id`,
-        element: <SingleArticle />,
+        element: <SingleBlogPage />,
       },
       {
         path: `/DailyDigest/:id`,
-        element: <SingleArticle />,
+        element: <SingleBlogPage />,
       },
       {
         path: `/DesignTools/:id`,
-        element: <SingleArticle />,
+        element: <SingleBlogPage />,
       },
       {
         path: "/:id",
-        element: <SingleArticle />,
+        element: <SingleBlogPage />,
       },
       {
         path: "/AddBlog",
         element: <AddBlogPage />,
+      },
+      {
+        path: "/EditBlogPage/:id",
+        element: <EditBlogPage />,
       },
     ],
   },
