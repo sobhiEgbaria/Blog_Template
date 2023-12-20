@@ -17,6 +17,10 @@ export const AddAndEditBlog = ({
   const [newBlogTitle, setNewBlogTitle] = useState(title);
   const [newBlogDescription, setNewBlogDescription] = useState(description);
 
+  const scrollWin = () => {
+    window.scrollTo(0, 700);
+  };
+
   const handleSubmit = (event) => {
     event.preventDefault();
   };
@@ -32,12 +36,13 @@ export const AddAndEditBlog = ({
     setNewBlogTitle("");
     setNewBlogDescription("");
     navigate("/");
+    scrollWin();
   };
 
   const handleOnClickEditBlog = () => {
     editBlogById(EditedBlogId, newBlogTitle, newBlogDescription);
-    console.log(EditedBlogId);
     navigate("/");
+    scrollWin();
   };
 
   const handelInput = (event) => {

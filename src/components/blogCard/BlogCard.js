@@ -2,6 +2,10 @@ import "./BlogCard.css";
 import { Link } from "react-router-dom";
 
 export const BlogCard = ({ img, title, description, date, id }) => {
+  const scrollWin = () => {
+    window.scrollTo(0, 0);
+  };
+
   return (
     <>
       <div className="card">
@@ -11,8 +15,8 @@ export const BlogCard = ({ img, title, description, date, id }) => {
           <p className="description">
             {description}{" "}
             <span>
-              <Link className="cardLink" to={`/${id}`}>
-                Read More
+              <Link onClick={scrollWin} className="cardLink" to={`/${id}`}>
+                SEE MORE
               </Link>
             </span>
           </p>
