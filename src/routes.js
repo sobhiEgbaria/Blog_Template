@@ -7,6 +7,7 @@ import { SingleBlogPage } from "./pages/SingleBlogPage";
 import { createBrowserRouter } from "react-router-dom";
 import { AddBlogPage } from "./pages/AddBlogPage";
 import { EditBlogPage } from "./pages/EditBlogPage";
+import { LandingPage } from "./pages/landingPge/LandingPage";
 import App from "./App";
 
 export const router = createBrowserRouter([
@@ -17,6 +18,10 @@ export const router = createBrowserRouter([
     children: [
       {
         path: "/",
+        element: <LandingPage />,
+      },
+      {
+        path: "/HomePage",
         element: <HomePage />,
       },
       {

@@ -1,31 +1,86 @@
 .landPageContainer {
   background: -webkit-linear-gradient(7.1deg, #c41740 4.8%, #ea9c28 100%);
-  -webkit-background-clip: content-box;
-  -webkit-text-fill-color: transparent;
   max-width: 1480px;
-  height: 960px;
-  border-radius: 10px;
-  display: flex;
+  height: 100vh;
   justify-content: space-between;
   align-items: center;
+  display: flex;
+  justify-content: space-between;
 }
 
+.landPageContainer .content {
+  width: 40%;
+  height: 100%;
+}
 .landPageContainer .content img {
-  width: 100px;
-  height: 50px;
+  width: 329.85px;
+  height: 53.31px;
+  top: 152px;
+  left: 100px;
+  margin: 100px 0px 25px 50px;
+}
+
+.landPageContainer .content h3 {
+  color: rgba(255, 255, 255, 1);
+  width: 490px;
+  height: 134px;
+  top: 215px;
+  left: 100px;
+  font-family: "Graphik Trial", sans-serif;
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 67px;
+  letter-spacing: -0.03em;
+  text-align: left;
+  margin: 10px 0px 25px 50px;
+}
+.landPageContainer .content p {
+  color: rgba(255, 255, 255, 0.518);
+  width: 420px;
+  height: 108px;
+  top: 379px;
+  left: 100px;
+  font-family: "Graphik Trial", sans-serif;
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 54px;
+  letter-spacing: 0em;
+  text-align: left;
+  margin: 10px 0px 25px 50px;
+}
+
+.rightSide {
+  position: relative;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 50%;
+}
+.landPageContainer .img2 {
+  width: 260px;
+  height: 490.68px;
+  z-index: 1;
+  border-radius: 10px;
+  position: absolute;
+  left: 190px;
+  bottom: 0;
 }
 
 .landPageContainer .img3 {
   width: 460px;
-  height: 800.62px;
-  top: 129.55px;
-  left: 662.61px;
+  height: 565.62px;
+  z-index: 3;
   border-radius: 10px;
+  position: absolute;
+  left: 0;
+  bottom: 0px;
 }
-.landPageContainer .img2 {
-  width: 460px;
-  height: 800.68px;
-  top: 127px;
-  left: 971px;
-  border-radius: 10px;
+.landPageContainer .content .cardLink {
+  color: white;
+  padding: 2px;
+  font-size: medium;
+}
+.landPageContainer .content .cardLink:hover {
+  cursor: pointer;
+  font-size: large;
 }

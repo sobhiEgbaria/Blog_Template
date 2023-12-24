@@ -36,13 +36,13 @@ export const AddAndEditBlog = ({
     });
     setNewBlogTitle("");
     setNewBlogDescription("");
-    navigate("/");
+    navigate("/HomePage");
     scrollWin();
   };
 
   const handleOnClickEditBlog = () => {
     editBlogById(EditedBlogId, newBlogTitle, newBlogDescription);
-    navigate("/");
+    navigate("/HomePage");
     scrollWin();
   };
 

@@ -10,7 +10,6 @@ export const BlogProvider = ({ children }) => {
   const addBlog = (post) => {
     setData([post, ...data]);
     fullData.unshift(post);
-    // localStorage.setItem("fullData", JSON.stringify(fullData));
   };
 
   const deleteBlogById = (id) => {
@@ -52,12 +51,6 @@ export const BlogProvider = ({ children }) => {
     }
   };
 
-  // useEffect(() => {
-  //   const stringData = JSON.parse(localStorage.getItem("fullData"));
-  //   setData(stringData);
-  //   setFullData(stringData);
-  // }, []);
-
   return (
     <BlogContext.Provider
       value={{
@@ -66,7 +59,6 @@ export const BlogProvider = ({ children }) => {
         searchBlog,
         deleteBlogById,
         editBlogById,
-        // PhotoSearch,
       }}
     >
       {children}

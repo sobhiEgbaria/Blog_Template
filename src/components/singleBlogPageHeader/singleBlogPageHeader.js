@@ -24,7 +24,7 @@ export const SingleBlogPageHeader = ({
         </div>
         <div>
           <div className="edit_remove_icons">
-            <Link to="/" onClick={handelDeleteClick}>
+            <Link to="/HomePage" onClick={handelDeleteClick}>
               <i class="fa-solid fa-trash"></i>
             </Link>
             <Link onClick={handelScroll} to={`/EditBlogPage/${id}`}>
