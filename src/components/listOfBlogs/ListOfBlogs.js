@@ -1,7 +1,7 @@
-import "./List_of_cards.css";
+import "./ListOfBlogs.css";
 import { BlogCard } from "../blogCard/BlogCard";
 
-export const ListOfCards = ({ data }) => {
+export const ListOfBlogs = ({ data }) => {
   return (
     <>
       <div className="cards_section">

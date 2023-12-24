@@ -8,10 +8,11 @@ export const SingleBlogPageHeader = ({
   id,
   deleteBlogById,
 }) => {
-  const handelDeleteClick = (e) => {
+  const handelDeleteClick = () => {
     deleteBlogById(id);
   };
 
+  // go to the top of the page to show the right content
   const handelScroll = () => {
     window.scrollTo(0, 100);
   };

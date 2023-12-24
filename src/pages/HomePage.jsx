@@ -1,7 +1,7 @@
 import { NavBar } from "../components/navbar/NavBar";
 import { HomePageHeaderContent } from "../components/homePage_header_content/HomePageHeaderContent";
-import { ListOfCards } from "../components/listOfCards/List_of_cards";
-import { ViewAll } from "../components/buttons/Buttons";
+import { ListOfBlogs } from "../components/listOfBlogs/ListOfBlogs";
+import { ViewAllButton } from "../components/buttons/Buttons";
 import { Contacts } from "../components/contacts/Contacts";
 import { CopyRight } from "../components/copyRight/CopyRight";
 import { BlogContext } from "../providers/blog-providers";
@@ -17,14 +17,14 @@ export const HomePage = () => {
         title="Minimal blog template for creative expressions"
         description="100% customisable and SEO-friendly blog template for personal and commercial purposes."
       />
-      <ViewAll title="Daily Digest" />
-      <ListOfCards data={data.slice(0, 3)} />
+      <ViewAllButton title="Daily Digest" />
+      <ListOfBlogs data={data.slice(0, 3)} />
 
-      <ViewAll title="Design Tools" />
-      <ListOfCards data={data.slice(3, 6)} />
+      <ViewAllButton title="Design Tools" />
+      <ListOfBlogs data={data.slice(3, 6)} />
 
-      <ViewAll title="Tutorials" />
-      <ListOfCards data={data.slice(6, 9)} />
+      <ViewAllButton title="Tutorials" />
+      <ListOfBlogs data={data.slice(6, 9)} />
       <Contacts />
       <CopyRight />
     </div>

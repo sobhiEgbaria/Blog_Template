@@ -7,6 +7,7 @@ import { useContext } from "react";
 export const NavBar = () => {
   const { user, signIn, logOut } = useContext(AuthContext);
 
+  // go to the top of the page to show the right content
   const handelScroll = () => {
     window.scrollTo(0, 100);
   };

@@ -11,13 +11,16 @@ export const MoreArticleButton = () => {
   );
 };
 
-export const ViewAll = ({ title }) => {
+export const ViewAllButton = ({ title }) => {
+  const handelScroll = () => {
+    window.scrollTo(0, 0);
+  };
   return (
     <>
       <div className="HomePageButton_container">
         <div className="HomePageButton_flex">
           <p className="title">{title}</p>
-          <Link to={title.split(" ").join("")}>
+          <Link onClick={handelScroll} to={`/${title.split(" ").join("")}`}>
             <button className="HomePageButton">View All</button>
           </Link>
         </div>
