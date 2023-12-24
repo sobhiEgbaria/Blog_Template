@@ -37,8 +37,8 @@ export const NavBar = () => {
           <span>
             {user ? (
               <>
-                <Link onClick={handelScroll} to="/AddBlog" id="subsLink">
-                  Add Blog <i class="fa-solid fa-plus"></i> &nbsp; &nbsp;
+                <Link onClick={handelScroll} to="/AddBlog" id="newBlog">
+                  New Blog <i class="fa-solid fa-plus"></i> &nbsp; &nbsp;
                 </Link>
                 <Link className="add_blog" onClick={logOut} to="/">
                   {user.userName} <i class="fa-solid fa-right-from-bracket"></i>

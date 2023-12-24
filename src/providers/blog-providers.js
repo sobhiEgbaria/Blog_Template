@@ -1,12 +1,12 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import { Data } from "../data/data";
 
 export const BlogContext = createContext(null);
 
 export const BlogProvider = ({ children }) => {
   // we use 2 state to keep the full data after filtering the blogs
-  const [data, setData] = useState(Data); // storing the filtered data(blogs)
-  const [fullData, setFullData] = useState(Data); // store always the full data (blogs)
+  const [data, setData] = useState(Data); // storing the filtered
+  const [fullData, setFullData] = useState(Data);
 
   const addBlog = (post) => {
     setData([post, ...data]);
@@ -43,12 +43,11 @@ export const BlogProvider = ({ children }) => {
       const filteredData = fullData.filter((blog) => {
         return blog.title.toLowerCase().includes(term.toLowerCase());
       });
-      //data = the filtered blogs
+
       setData([...filteredData]);
     }
 
     if (term === "") {
-      // data =  all the blogs
       setData([...fullData]);
     }
   };

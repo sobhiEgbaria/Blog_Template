@@ -10,7 +10,6 @@ export const AddAndEditBlog = ({
   description,
   hederTitle,
   EditedBlogId,
-  PhotoSearch,
 }) => {
   const navigate = useNavigate();
   const { addBlog, editBlogById } = useContext(BlogContext);
@@ -26,7 +25,7 @@ export const AddAndEditBlog = ({
     event.preventDefault();
   };
 
-  const handleOnClickAddBlog = async () => {
+  const handleOnClickAddBlog = () => {
     addBlog({
       id: Date.now(),
       title: newBlogTitle,
@@ -34,6 +33,7 @@ export const AddAndEditBlog = ({
       description: newBlogDescription,
       img: img,
     });
+    //clear the input and the text area
     setNewBlogTitle("");
     setNewBlogDescription("");
     navigate("/HomePage");
@@ -84,8 +84,9 @@ export const AddAndEditBlog = ({
               ></textarea>
             </div>
             <button
+              // to pik create or edit blog
               onClick={
-                buttonText === "Add Blog"
+                buttonText === "Create Blog"
                   ? handleOnClickAddBlog
                   : handleOnClickEditBlog
               }

@@ -8,7 +8,7 @@ export const AddBlogPage = () => {
     <>
       <NavBar />
       <AddAndEditBlog
-        buttonText={"Add Blog"}
+        buttonText={"Create Blog"}
         title={""}
         description={""}
         hederTitle={"Share Your Blog With Us"}
