@@ -7,7 +7,7 @@
   padding: 20px;
   background-color: white;
   max-width: 980px;
-  max-height: 260px;
+  max-height: 290px;
   top: 300px;
   left: 20px;
 }
@@ -40,38 +40,56 @@
   height: 178px;
   top: 41px;
   left: 30px;
-  gap: 30px;
 }
 
 .card .content .date {
-  width: 107px;
-  height: 16px;
-  font-size: 13px;
+  width: 140px;
+  height: 36px;
+  font-size: 15px;
   font-weight: 400;
   line-height: 16px;
   letter-spacing: 0em;
-  text-align: center;
+  text-align: left;
   color: rgba(102, 112, 133, 1);
-  margin: 10px 0px;
+  overflow: auto;
 }
 
 .card .content .title {
   width: 610px;
-  height: 68px;
+  height: 60px;
   font-size: 26px;
   font-weight: 600;
   line-height: 34px;
   letter-spacing: 0em;
   color: rgba(29, 41, 57, 1);
+  margin-bottom: 10px;
 }
 
 .card .content .description {
   width: 610px;
-  height: 54px;
+  height: 80px;
   font-size: 18px;
   font-weight: 400;
   line-height: 27px;
   letter-spacing: 0em;
   text-align: left;
   color: rgba(71, 84, 103, 1);
+}
+
+.card .content .description #icon {
+  font-size: x-large;
+
+  padding: 10px 5px 0px 15px;
+}
+
+.card .content .description #icon:hover {
+  cursor: pointer;
+}
+
+#icon_bookmark {
+  font-size: x-large;
+  padding: 10px 5px 0px 5px;
+}
+#icon_bookmark:hover {
+  cursor: pointer;
 }
