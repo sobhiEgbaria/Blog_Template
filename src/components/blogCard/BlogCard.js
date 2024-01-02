@@ -26,6 +26,7 @@ export const BlogCard = ({ img, title, description, date, id }) => {
                 onClick={handelBookMarkClick}
                 id="icon_bookmark"
                 class="fa-solid fa-bookmark"
+                style={{ color: "#4FFFB0" }}
               ></i>
             ) : (
               <i

@@ -6,10 +6,9 @@
   margin: 20px;
   padding: 20px;
   background-color: white;
-  max-width: 980px;
-  max-height: 290px;
-  top: 300px;
-  left: 20px;
+  width: 980px;
+  height: 300px;
+  overflow: auto;
 }
 .card:hover {
   border: solid 1px black;
@@ -52,6 +51,7 @@
   text-align: left;
   color: rgba(102, 112, 133, 1);
   overflow: auto;
+  margin-bottom: 10px;
 }
 
 .card .content .title {
@@ -79,7 +79,7 @@
 .card .content .description #icon {
   font-size: x-large;
 
-  padding: 10px 5px 0px 15px;
+  padding: 10px 5px 20px 15px;
 }
 
 .card .content .description #icon:hover {
