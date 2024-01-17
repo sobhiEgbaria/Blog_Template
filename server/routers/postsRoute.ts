@@ -16,6 +16,11 @@ router.get(
   "/:id",
   async (req: Request, res: Response) => await postController.getPost(req, res)
 );
+router.get(
+  "/",
+  async (req: Request, res: Response) =>
+    await postController.getAllPost(req, res)
+);
 router.put(
   "/:id",
   async (req: Request, res: Response) =>

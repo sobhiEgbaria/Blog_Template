@@ -30,6 +30,15 @@ export class PostController {
     }
   }
 
+  async getAllPost(req: Request, res: Response): Promise<void> {
+    try {
+      const posts = await this.postBL.getALLPost();
+      res.status(200).send(posts);
+    } catch (error) {
+      res.status(400).send((error as Error).message);
+    }
+  }
+
   async updatePost(req: Request, res: Response): Promise<void> {
     const postId = +req.params.id;
     const postData = req.body;

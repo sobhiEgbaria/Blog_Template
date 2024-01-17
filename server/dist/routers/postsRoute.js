@@ -20,6 +20,7 @@ const router = express_1.default.Router();
 const postController = new PostController_1.PostController(new PostBL_1.PostBL(new PostDataAccessInMemory_1.PostDataAccessInMemory()));
 router.post("/", (req, res) => __awaiter(void 0, void 0, void 0, function* () { return yield postController.addPost(req, res); }));
 router.get("/:id", (req, res) => __awaiter(void 0, void 0, void 0, function* () { return yield postController.getPost(req, res); }));
+router.get("/", (req, res) => __awaiter(void 0, void 0, void 0, function* () { return yield postController.getAllPost(req, res); }));
 router.put("/:id", (req, res) => __awaiter(void 0, void 0, void 0, function* () { return yield postController.updatePost(req, res); }));
 router.delete("/:id", (req, res) => __awaiter(void 0, void 0, void 0, function* () { return yield postController.deletePost(req, res); }));
 exports.default = router;

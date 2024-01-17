@@ -37,6 +37,9 @@ class InMemoryDB {
     getPost(id) {
         return this.posts.get(id);
     }
+    getAllPost() {
+        return this.posts.entries();
+    }
     updatePost(id, postData) {
         let post = this.posts.get(id);
         if (post) {

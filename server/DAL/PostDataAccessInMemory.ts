@@ -17,6 +17,14 @@ export class PostDataAccessInMemory implements DataAccess<Post> {
     return post;
   }
 
+  async getAll(): Promise<IterableIterator<[number, Post]>> {
+    const posts = await this.db.getAllPost();
+    if (!posts) {
+      throw new Error(`posts not found`);
+    }
+    return posts;
+  }
+
   async update(postId: number, updateData: Partial<Post>): Promise<void> {
     const existingPost = await this.db.getPost(postId);
     if (!existingPost) {

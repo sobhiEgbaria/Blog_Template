@@ -33,6 +33,15 @@ class PostBL {
             return Post;
         });
     }
+    getALLPost() {
+        return __awaiter(this, void 0, void 0, function* () {
+            const Posts = yield this.postDataAccess.getAll();
+            if (!Posts) {
+                throw new Error(`Posts not found`);
+            }
+            return Posts;
+        });
+    }
     updatePost(postId, updateData) {
         return __awaiter(this, void 0, void 0, function* () {
             try {

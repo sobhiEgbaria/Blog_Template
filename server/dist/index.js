@@ -7,13 +7,14 @@ const express_1 = __importDefault(require("express"));
 // import activityLogger from './middlewares/activityLogger';
 const usersRoute_1 = __importDefault(require("./routers/usersRoute"));
 const postsRoute_1 = __importDefault(require("./routers/postsRoute"));
+require("dotenv/config");
 const app = (0, express_1.default)();
 app.use(express_1.default.json());
 // app.use(activityLogger);
 app.use("/users", usersRoute_1.default);
 app.use("/posts", postsRoute_1.default);
 //run the server
-const port = 8000;
+const port = process.env.Port || 7000;
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`);
 });

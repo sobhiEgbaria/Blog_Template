@@ -43,6 +43,17 @@ class PostController {
             }
         });
     }
+    getAllPost(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            try {
+                const posts = yield this.postBL.getALLPost();
+                res.status(200).send(posts);
+            }
+            catch (error) {
+                res.status(400).send(error.message);
+            }
+        });
+    }
     updatePost(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const postId = +req.params.id;

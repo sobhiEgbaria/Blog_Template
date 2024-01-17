@@ -32,6 +32,15 @@ class PostDataAccessInMemory {
             return post;
         });
     }
+    getAll() {
+        return __awaiter(this, void 0, void 0, function* () {
+            const posts = yield this.db.getAllPost();
+            if (!posts) {
+                throw new Error(`posts not found`);
+            }
+            return posts;
+        });
+    }
     update(postId, updateData) {
         return __awaiter(this, void 0, void 0, function* () {
             const existingPost = yield this.db.getPost(postId);
