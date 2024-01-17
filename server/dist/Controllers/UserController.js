@@ -44,6 +44,21 @@ class UserController {
             }
         });
     }
+    getAllUsers(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            try {
+                const users = yield this.userBL.getAllUsers();
+                const userArray = [];
+                for (let value of users) {
+                    userArray.push(value);
+                }
+                res.status(200).send(userArray);
+            }
+            catch (error) {
+                res.status(400).send(error.message);
+            }
+        });
+    }
     updateUser(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const userId = +req.params.id;

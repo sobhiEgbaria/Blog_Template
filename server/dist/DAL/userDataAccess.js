@@ -19,6 +19,13 @@ class UserDataAccess {
         }
         return user;
     }
+    getAllUsers() {
+        const user = this.db.getAllUser();
+        if (!user) {
+            throw new Error(`Users not found`);
+        }
+        return user;
+    }
     updateUser(userId, updateData) {
         const existingUser = this.db.getUser(userId);
         if (!existingUser) {

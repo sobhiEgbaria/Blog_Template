@@ -47,7 +47,11 @@ class PostController {
         return __awaiter(this, void 0, void 0, function* () {
             try {
                 const posts = yield this.postBL.getALLPost();
-                res.status(200).send(posts);
+                const postArray = [];
+                for (let value of posts) {
+                    postArray.push(value);
+                }
+                res.status(200).send(postArray);
             }
             catch (error) {
                 res.status(400).send(error.message);

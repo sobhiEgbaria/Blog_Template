@@ -34,6 +34,15 @@ class UserBL {
             return user;
         });
     }
+    getAllUsers() {
+        return __awaiter(this, void 0, void 0, function* () {
+            const users = yield this.userDataAccess.getAllUsers();
+            if (!users) {
+                throw new Error(`Users not found `);
+            }
+            return users;
+        });
+    }
     updateUser(userId, updateData) {
         return __awaiter(this, void 0, void 0, function* () {
             try {

@@ -26,6 +26,20 @@ export class UserController {
     }
   }
 
+  async getAllUsers(req: Request, res: Response) {
+    try {
+      const users = await this.userBL.getAllUsers();
+      const userArray = [];
+      for (let value of users) {
+        userArray.push(value);
+      }
+
+      res.status(200).send(userArray);
+    } catch (error) {
+      res.status(400).send((error as Error).message);
+    }
+  }
+
   async updateUser(req: Request, res: Response) {
     const userId = +req.params.id;
     const userData = req.body;

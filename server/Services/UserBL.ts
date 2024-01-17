@@ -20,6 +20,14 @@ export class UserBL {
     return user;
   }
 
+  async getAllUsers(): Promise<IterableIterator<User>> {
+    const users = await this.userDataAccess.getAllUsers();
+    if (!users) {
+      throw new Error(`Users not found `);
+    }
+    return users;
+  }
+
   async updateUser(userId: number, updateData: Partial<User>): Promise<void> {
     try {
       await this.userDataAccess.updateUser(userId, updateData);

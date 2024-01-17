@@ -1,5 +1,6 @@
 import User from "../models/User";
 import Post from "../models/Post";
+import { log } from "console";
 
 class InMemoryDB {
   private static instance: InMemoryDB;
@@ -25,6 +26,10 @@ class InMemoryDB {
     return this.users.get(id);
   }
 
+  getAllUser(): IterableIterator<User> {
+    return this.users.values();
+  }
+
   updateUser(id: number, userData: Partial<User>) {
     let user = this.users.get(id);
     if (user) {
@@ -47,8 +52,8 @@ class InMemoryDB {
     return this.posts.get(id);
   }
 
-  getAllPost(): IterableIterator<[number, Post]> {
-    return this.posts.entries();
+  getAllPost(): IterableIterator<Post> {
+    return this.posts.values();
   }
 
   updatePost(id: number, postData: Partial<Post>) {

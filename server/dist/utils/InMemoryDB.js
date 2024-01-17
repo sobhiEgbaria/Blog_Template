@@ -19,6 +19,9 @@ class InMemoryDB {
     getUser(id) {
         return this.users.get(id);
     }
+    getAllUser() {
+        return this.users.values();
+    }
     updateUser(id, userData) {
         let user = this.users.get(id);
         if (user) {
@@ -38,7 +41,7 @@ class InMemoryDB {
         return this.posts.get(id);
     }
     getAllPost() {
-        return this.posts.entries();
+        return this.posts.values();
     }
     updatePost(id, postData) {
         let post = this.posts.get(id);

@@ -30,10 +30,14 @@ export class PostController {
     }
   }
 
-  async getAllPost(req: Request, res: Response): Promise<void> {
+  async getAllPost(req: Request, res: Response) {
     try {
       const posts = await this.postBL.getALLPost();
-      res.status(200).send(posts);
+      const postArray = [];
+      for (let value of posts) {
+        postArray.push(value);
+      }
+      res.status(200).send(postArray);
     } catch (error) {
       res.status(400).send((error as Error).message);
     }

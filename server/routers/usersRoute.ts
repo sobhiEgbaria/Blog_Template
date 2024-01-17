@@ -11,6 +11,12 @@ router.get(
   "/:id",
   async (req: Request, res: Response) => await userController.getUser(req, res)
 );
+router.get(
+  "/",
+  async (req: Request, res: Response) =>
+    await userController.getAllUsers(req, res)
+);
+
 router.put(
   "/:id",
   async (req: Request, res: Response) =>
