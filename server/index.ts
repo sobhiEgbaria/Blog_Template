@@ -3,6 +3,7 @@ import express from "express";
 import usersRoute from "./routers/usersRoute";
 import postsRoute from "./routers/postsRoute";
 import "dotenv/config";
+import { getClient } from "./db";
 
 const app = express();
 app.use(express.json());
@@ -16,3 +17,5 @@ const port = process.env.Port || 7000;
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
 });
+
+getClient();

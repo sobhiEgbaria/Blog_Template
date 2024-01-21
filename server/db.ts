@@ -9,7 +9,7 @@ const client = new Client({
   port: parseInt(process.env.DB_PORT || "5432", 10),
 });
 
-async function connect() {
+export async function connect() {
   try {
     await client.connect();
     console.log("Connected to PostgreSQL");

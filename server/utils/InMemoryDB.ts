@@ -1,6 +1,5 @@
 import User from "../models/User";
 import Post from "../models/Post";
-import { log } from "console";
 
 class InMemoryDB {
   private static instance: InMemoryDB;
