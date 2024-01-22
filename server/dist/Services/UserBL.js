@@ -10,10 +10,10 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.UserBL = void 0;
-const userDataAccess_1 = require("../DAL/userDataAccess");
+const UserDataAccess_1 = require("../DAL/SQL/UserDataAccess");
 class UserBL {
     constructor() {
-        this.userDataAccess = new userDataAccess_1.UserDataAccess();
+        this.userDataAccess = new UserDataAccess_1.UserDataAccess();
     }
     addUser(user) {
         return __awaiter(this, void 0, void 0, function* () {
