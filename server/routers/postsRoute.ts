@@ -1,7 +1,7 @@
 import express, { Request, Response } from "express";
 import { PostController } from "../Controllers/PostController";
 import { PostBL } from "../Services/PostBL";
-import { PostDataAccess } from "../DAL/SQL/PostDataAccess";
+import { PostDataAccess } from "../DAL/PostDataAccess";
 
 const router = express.Router();
 const postController = new PostController(new PostBL(new PostDataAccess()));

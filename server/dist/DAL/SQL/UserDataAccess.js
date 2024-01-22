@@ -36,7 +36,7 @@ class UserDataAccess {
             const query = "SELECT * FROM users";
             const result = yield db_1.default.query(query);
             if (result.rows.length === 0) {
-                throw new Error(`Users not found`);
+                throw new Error(`User with ID  not found`);
             }
             return result.rows[0];
         });

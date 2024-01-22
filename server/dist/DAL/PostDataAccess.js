@@ -13,7 +13,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.PostDataAccess = void 0;
-const db_1 = __importDefault(require("../../db"));
+const db_1 = __importDefault(require("../db"));
 class PostDataAccess {
     add(post) {
         return __awaiter(this, void 0, void 0, function* () {
@@ -33,12 +33,13 @@ class PostDataAccess {
     }
     getAll() {
         return __awaiter(this, void 0, void 0, function* () {
-            const query = "SELECT * FROM posts;";
+            const query = "SELECT * FROM posts";
             const result = yield db_1.default.query(query);
             if (result.rows.length === 0) {
-                throw new Error(`Post with ID not found`);
+                throw new Error(`Posts not found`);
             }
-            return result.rows[0];
+            console.log(result.rows);
+            return result.rows;
         });
     }
     update(postId, updateData) {

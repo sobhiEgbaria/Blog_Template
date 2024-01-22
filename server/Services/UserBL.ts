@@ -1,4 +1,4 @@
-import { UserDataAccess } from "../DAL/SQL/UserDataAccess";
+import { UserDataAccess } from "../DAL/UserDataAccess";
 import User from "../models/User";
 
 export class UserBL {

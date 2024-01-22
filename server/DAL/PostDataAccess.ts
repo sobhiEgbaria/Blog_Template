@@ -1,6 +1,6 @@
-import pool from "../../db";
-import Post from "../../models/Post";
-import { DataAccess } from "../DataAccess";
+import pool from "../db";
+import Post from "../models/Post";
+import { DataAccess } from "./DataAccess";
 
 export class PostDataAccess implements DataAccess<Post> {
   async add(post: Post): Promise<void> {
@@ -19,15 +19,16 @@ export class PostDataAccess implements DataAccess<Post> {
     return result.rows[0];
   }
 
-  async getAll(): Promise<IterableIterator<Post>> {
-    const query = "SELECT * FROM posts ";
+  async getAll(): Promise<any> {
+    const query = "SELECT * FROM posts";
     const result = await pool.query(query);
 
     if (result.rows.length === 0) {
-      throw new Error(`Post with ID not found`);
+      throw new Error(`Posts not found`);
     }
+    console.log(result.rows);
 
-    return result.rows[0];
+    return result.rows;
   }
 
   async update(postId: number, updateData: Partial<Post>): Promise<void> {

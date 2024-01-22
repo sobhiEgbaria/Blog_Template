@@ -24,7 +24,7 @@ export class PostBL {
     return Post;
   }
 
-  async getALLPost(): Promise<IterableIterator<Post>> {
+  async getALLPost(): Promise<any> {
     const Posts = await this.postDataAccess.getAll();
     if (!Posts) {
       throw new Error(`Posts not found`);
