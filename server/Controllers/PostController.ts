@@ -50,8 +50,9 @@ export class PostController {
   }
 
   async getAllPost(req: Request, res: Response) {
+    const limit = req.query.limit;
     try {
-      const posts = await this.postBL.getALLPost();
+      const posts = await this.postBL.getALLPost(limit);
       const postArray = [];
       for (let value of posts) {
         postArray.push(value);

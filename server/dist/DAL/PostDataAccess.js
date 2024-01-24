@@ -48,10 +48,10 @@ class PostDataAccess {
             return result.rows[0];
         });
     }
-    getAll() {
+    getAll(limit) {
         return __awaiter(this, void 0, void 0, function* () {
-            const query = "SELECT * FROM posts ";
-            const result = yield db_1.default.query(query);
+            const query = "SELECT * FROM posts LIMIT $1";
+            const result = yield db_1.default.query(query, [limit]);
             if (result.rows.length === 0) {
                 throw new Error(`Posts not found`);
             }

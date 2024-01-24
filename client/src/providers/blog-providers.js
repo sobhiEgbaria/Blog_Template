@@ -7,14 +7,17 @@ export const BlogProvider = ({ children }) => {
   // we use 2 state to keep the full data after filtering the blogs
   const [data, setData] = useState([]); // storing the filtered
   const [fullData, setFullData] = useState(data);
+  const [postNumber, setPostNumber] = useState(1);
   const { user } = useContext(AuthContext);
 
   const fetchPosts = async () => {
     try {
-      const response = await fetch(`http://localhost:3000/posts`);
+      const response = await fetch(
+        `http://localhost:3000/posts?limit=${postNumber}`
+      );
       setData(await response.json());
     } catch (error) {
-      alert(`${error.message}`);
+      console.log(`${error.message}`);
     }
   };
 
@@ -39,7 +42,6 @@ export const BlogProvider = ({ children }) => {
         "Content-Type": "application/json",
       },
     }).then(() => {
-      alert("post created ");
       fetchPosts();
     });
   };
@@ -60,7 +62,6 @@ export const BlogProvider = ({ children }) => {
         "Content-Type": "application/json",
       },
     }).then(() => {
-      alert("post created ");
       fetchPosts();
     });
   };
@@ -72,7 +73,6 @@ export const BlogProvider = ({ children }) => {
         "Content-Type": "application/json",
       },
     }).then(() => {
-      alert("post created ");
       fetchPosts();
     });
   };
@@ -99,6 +99,8 @@ export const BlogProvider = ({ children }) => {
         searchBlog,
         deleteBlogById,
         editBlogById,
+        postNumber,
+        setPostNumber,
       }}
     >
       {children}

@@ -31,8 +31,8 @@ export class PostBL {
     return Post;
   }
 
-  async getALLPost(): Promise<any> {
-    const Posts = await this.postDataAccess.getAll();
+  async getALLPost(limit: any): Promise<any> {
+    const Posts = await this.postDataAccess.getAll(limit);
     if (!Posts) {
       throw new Error(`Posts not found`);
     }

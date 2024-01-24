@@ -1,11 +1,21 @@
 import "./Buttons.css";
 import { Link } from "react-router-dom";
+import { useState, useContext } from "react";
+import { BlogContext } from "../../providers/blog-providers";
 
 export const MoreArticleButton = () => {
+  const { postNumber, setPostNumber } = useContext(BlogContext);
+
+  const handelClick = () => {
+    setPostNumber(postNumber + 3);
+  };
+
   return (
     <>
       <div className="MoreArticleButton_container">
-        <button className="MoreArticleButton">More Article</button>
+        <button onClick={handelClick} className="MoreArticleButton">
+          More Article
+        </button>
       </div>
     </>
   );

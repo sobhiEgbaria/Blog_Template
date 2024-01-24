@@ -42,9 +42,9 @@ class PostBL {
             return Post;
         });
     }
-    getALLPost() {
+    getALLPost(limit) {
         return __awaiter(this, void 0, void 0, function* () {
-            const Posts = yield this.postDataAccess.getAll();
+            const Posts = yield this.postDataAccess.getAll(limit);
             if (!Posts) {
                 throw new Error(`Posts not found`);
             }
