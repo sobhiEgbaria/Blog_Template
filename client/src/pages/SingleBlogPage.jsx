@@ -12,7 +12,7 @@ export const SingleBlogPage = () => {
 
   // using params to get blog's id, and with the id we get the right blog from the data.
   const params = useParams();
-  const id = parseInt(params.id);
+  const id = params.id;
 
   const blog = data.find((item) => {
     return item.id === id;

@@ -11,7 +11,16 @@ export class PostController {
 
   async addPost(req: Request, res: Response): Promise<void> {
     const postData = req.body;
-    const post = new Post(postData.id, postData.content, postData.postedBy);
+    const post = new Post(
+      postData.id,
+      postData.date,
+      postData.title,
+      postData.description,
+      postData.body,
+      postData.img,
+      postData.category,
+      postData.postedBy
+    );
     try {
       await this.postBL.addPost(post);
       res.status(201).send({ message: `Post created successfully` });

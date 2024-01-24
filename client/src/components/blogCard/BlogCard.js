@@ -36,7 +36,7 @@ export const BlogCard = ({ img, title, description, date, id }) => {
               ></i>
             )}
 
-            {date}
+            {date.slice(0, 10)}
           </p>
           <h3 className="title">{title}</h3>
           <p className="description">

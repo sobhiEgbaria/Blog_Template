@@ -4,8 +4,17 @@ import { DataAccess } from "./DataAccess";
 
 export class PostDataAccess implements DataAccess<Post> {
   async add(post: Post): Promise<void> {
-    const query = "INSERT INTO posts (content, posted_by) VALUES ($1, $2)";
-    await pool.query(query, [post.content, post.postedBy]);
+    const query =
+      "INSERT INTO posts (date, title,description,body,img,category,postedBy) VALUES ($1, $2, $3, $4, $5, $6, $7)";
+    await pool.query(query, [
+      post.date,
+      post.title,
+      post.description,
+      post.body,
+      post.img,
+      post.category,
+      post.postedBy,
+    ]);
   }
 
   async get(postId: number): Promise<Post> {
@@ -20,14 +29,12 @@ export class PostDataAccess implements DataAccess<Post> {
   }
 
   async getAll(): Promise<any> {
-    const query = "SELECT * FROM posts";
+    const query = "SELECT * FROM posts ";
     const result = await pool.query(query);
 
     if (result.rows.length === 0) {
       throw new Error(`Posts not found`);
     }
-    console.log(result.rows);
-
     return result.rows;
   }
 

@@ -3,11 +3,12 @@ import express from "express";
 import usersRoute from "./routers/usersRoute";
 import postsRoute from "./routers/postsRoute";
 import "dotenv/config";
-import pool from "./db";
+import cors from "cors";
 
 const app = express();
 app.use(express.json());
 // app.use(activityLogger);
+app.use(cors());
 
 app.use("/users", usersRoute);
 app.use("/posts", postsRoute);

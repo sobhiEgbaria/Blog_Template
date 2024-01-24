@@ -21,7 +21,7 @@ class PostController {
     addPost(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const postData = req.body;
-            const post = new Post_1.default(postData.id, postData.content, postData.postedBy);
+            const post = new Post_1.default(postData.id, postData.date, postData.title, postData.description, postData.body, postData.img, postData.category, postData.postedBy);
             try {
                 yield this.postBL.addPost(post);
                 res.status(201).send({ message: `Post created successfully` });
