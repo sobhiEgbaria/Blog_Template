@@ -9,7 +9,8 @@ export const AddAndEditBlog = ({
   description,
   body,
   hederTitle,
-  EditedBlogId,
+  img,
+  id,
 }) => {
   const navigate = useNavigate();
   const { addBlog, editBlogById } = useContext(BlogContext);
@@ -17,7 +18,7 @@ export const AddAndEditBlog = ({
   const [newBlogTitle, setNewBlogTitle] = useState(title);
   const [newBlogDescription, setNewBlogDescription] = useState(description);
   const [newBlogBody, setNewBlogBody] = useState(body);
-  const [newBlogImage, setNewBlogImage] = useState("");
+  const [newBlogImage, setNewBlogImage] = useState(img);
   const [newBlogSelect, setNewBlogSelect] = useState("blog category");
 
   const scrollWin = () => {
@@ -44,7 +45,14 @@ export const AddAndEditBlog = ({
   };
 
   const handleOnClickEditBlog = () => {
-    editBlogById(EditedBlogId, newBlogTitle, newBlogDescription);
+    editBlogById({
+      id: id,
+      title: newBlogTitle,
+      description: newBlogDescription,
+      body: newBlogBody,
+      img: newBlogImage,
+      category: newBlogSelect,
+    });
     navigate("/HomePage");
     scrollWin();
   };

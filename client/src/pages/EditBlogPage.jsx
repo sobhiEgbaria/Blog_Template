@@ -10,7 +10,7 @@ export const EditBlogPage = () => {
   const { data } = useContext(BlogContext);
 
   const params = useParams();
-  const id = parseInt(params.id);
+  const id = params.id;
 
   const blog = data.find((item) => {
     return item.id === id;
@@ -21,8 +21,12 @@ export const EditBlogPage = () => {
       <NavBar />
       <AddAndEditBlog
         buttonText={"Edit"}
+        id={id}
         title={blog.title}
         description={blog.description}
+        body={blog.body}
+        img={blog.img}
+        category={blog.category}
         hederTitle={"Edit Your Blog"}
         EditedBlogId={blog.id}
       />

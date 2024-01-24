@@ -1,13 +1,12 @@
 import { createContext, useEffect, useState, useContext } from "react";
-import { Data } from "../data/data";
 import { AuthContext } from "./AuthProviders";
 
 export const BlogContext = createContext(null);
 
 export const BlogProvider = ({ children }) => {
   // we use 2 state to keep the full data after filtering the blogs
-  const [data, setData] = useState(Data); // storing the filtered
-  const [fullData, setFullData] = useState(Data);
+  const [data, setData] = useState([]); // storing the filtered
+  const [fullData, setFullData] = useState(data);
   const { user } = useContext(AuthContext);
 
   const fetchPosts = async () => {
@@ -43,33 +42,39 @@ export const BlogProvider = ({ children }) => {
       alert("post created ");
       fetchPosts();
     });
-    console.log(newPost);
   };
-  //==================================================================================
-  //==================================================================================
+
+  const editBlogById = (post) => {
+    const updates = {
+      title: post.title,
+      description: post.description,
+      body: post.body,
+      img: post.img,
+      category: post.category,
+    };
+
+    fetch(`http://localhost:3000/posts/${post.id}`, {
+      method: "PUT",
+      body: JSON.stringify(updates),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    }).then(() => {
+      alert("post created ");
+      fetchPosts();
+    });
+  };
+
   const deleteBlogById = (id) => {
-    const updatedData = fullData.filter((blog) => {
-      return blog.id !== id;
+    fetch(`http://localhost:3000/posts/${id}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    }).then(() => {
+      alert("post created ");
+      fetchPosts();
     });
-    setData([...updatedData]);
-    setFullData([...updatedData]);
-  };
-
-  const editBlogById = (id, title, description) => {
-    const updatedData = fullData.map((blog) => {
-      if (blog.id === id) {
-        return {
-          ...blog,
-          title: title,
-          description: description,
-          id: id,
-        };
-      }
-
-      return blog;
-    });
-    setData([...updatedData]);
-    setFullData([...updatedData]);
   };
 
   const searchBlog = (term) => {
@@ -100,3 +105,31 @@ export const BlogProvider = ({ children }) => {
     </BlogContext.Provider>
   );
 };
+
+//==================================================================================
+//==================================================================================
+
+// const deleteBlogById = (id) => {
+//   const updatedData = fullData.filter((blog) => {
+//     return blog.id !== id;
+//   });
+//   setData([...updatedData]);
+//   setFullData([...updatedData]);
+// };
+
+// const editBlogById = (id, title, description) => {
+//   const updatedData = fullData.map((blog) => {
+//     if (blog.id === id) {
+//       return {
+//         ...blog,
+//         title: title,
+//         description: description,
+//         id: id,
+//       };
+//     }
+
+//     return blog;
+//   });
+//   setData([...updatedData]);
+//   setFullData([...updatedData]);
+// };
