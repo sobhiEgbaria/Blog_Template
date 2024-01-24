@@ -23,6 +23,13 @@ export class PostBL {
     }
     return Post;
   }
+  async filterByTitle(title: string): Promise<Post> {
+    const Post = await this.postDataAccess.filterByTitle(title);
+    if (!Post) {
+      throw new Error(`Post with title ${title} not found`);
+    }
+    return Post;
+  }
 
   async getALLPost(): Promise<any> {
     const Posts = await this.postDataAccess.getAll();

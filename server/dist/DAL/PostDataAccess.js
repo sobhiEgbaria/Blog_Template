@@ -38,6 +38,16 @@ class PostDataAccess {
             return result.rows[0];
         });
     }
+    filterByTitle(title) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const query = `SELECT * FROM posts WHERE title like $1%`;
+            const result = yield db_1.default.query(query, [title]);
+            if (result.rows.length === 0) {
+                throw new Error(`Post not found`);
+            }
+            return result.rows[0];
+        });
+    }
     getAll() {
         return __awaiter(this, void 0, void 0, function* () {
             const query = "SELECT * FROM posts ";

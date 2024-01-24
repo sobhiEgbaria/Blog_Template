@@ -79,7 +79,7 @@ export const BlogProvider = ({ children }) => {
 
   const searchBlog = (term) => {
     if (term !== "") {
-      const filteredData = fullData.filter((blog) => {
+      const filteredData = data.filter((blog) => {
         return blog.title.toLowerCase().includes(term.toLowerCase());
       });
 
@@ -87,7 +87,7 @@ export const BlogProvider = ({ children }) => {
     }
 
     if (term === "") {
-      setData([...fullData]);
+      setData([...data]);
     }
   };
 
@@ -132,4 +132,18 @@ export const BlogProvider = ({ children }) => {
 //   });
 //   setData([...updatedData]);
 //   setFullData([...updatedData]);
+// };
+
+// const searchBlog = (term) => {
+//   if (term !== "") {
+//     const filteredData = fullData.filter((blog) => {
+//       return blog.title.toLowerCase().includes(term.toLowerCase());
+//     });
+
+//     setData([...filteredData]);
+//   }
+
+//   if (term === "") {
+//     setData([...fullData]);
+//   }
 // };

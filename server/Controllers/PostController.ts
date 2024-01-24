@@ -39,6 +39,16 @@ export class PostController {
     }
   }
 
+  async filterByTitle(req: Request, res: Response): Promise<void> {
+    const title = req.params.title;
+    try {
+      const posts = await this.postBL.filterByTitle(title);
+      res.status(200).send(posts);
+    } catch (error) {
+      res.status(400).send((error as Error).message);
+    }
+  }
+
   async getAllPost(req: Request, res: Response) {
     try {
       const posts = await this.postBL.getALLPost();
