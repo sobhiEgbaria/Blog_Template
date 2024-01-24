@@ -11,6 +11,7 @@ export const AddBlogPage = () => {
         buttonText={"Create Blog"}
         title={""}
         description={""}
+        body={""}
         hederTitle={"Share Your Blog With Us"}
       />
       <Contacts />

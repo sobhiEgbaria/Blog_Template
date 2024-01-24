@@ -8,29 +8,29 @@ export const BlogProvider = ({ children }) => {
   // we use 2 state to keep the full data after filtering the blogs
   const [data, setData] = useState(Data); // storing the filtered
   const [fullData, setFullData] = useState(Data);
-  //==================================================================================
-  //==================================================================================
   const { user } = useContext(AuthContext);
 
   const fetchPosts = async () => {
     try {
       const response = await fetch(`http://localhost:3000/posts`);
       setData(await response.json());
-    } catch {
-      alert("there was an error while fetching posts from the server");
+    } catch (error) {
+      alert(`${error.message}`);
     }
   };
+
   useEffect(() => {
     fetchPosts();
-  }, []);
+  }, [data]);
 
-  console.log(data);
-
-  const addPost = (post) => {
+  const addBlog = (post) => {
     const newPost = {
       title: post.title,
-      content: post.content,
-      postedBy: user.id,
+      description: post.description,
+      body: post.body,
+      img: post.img,
+      category: post.category,
+      postedBy: "sobhi",
     };
 
     fetch(`http://localhost:3000/posts`, {
@@ -40,16 +40,13 @@ export const BlogProvider = ({ children }) => {
         "Content-Type": "application/json",
       },
     }).then(() => {
-      alert("post created");
+      alert("post created ");
       fetchPosts();
     });
+    console.log(newPost);
   };
-
-  const addBlog = (post) => {
-    setData([post, ...data]);
-    setFullData([post, ...data]);
-  };
-
+  //==================================================================================
+  //==================================================================================
   const deleteBlogById = (id) => {
     const updatedData = fullData.filter((blog) => {
       return blog.id !== id;

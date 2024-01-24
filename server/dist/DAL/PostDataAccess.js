@@ -17,9 +17,8 @@ const db_1 = __importDefault(require("../db"));
 class PostDataAccess {
     add(post) {
         return __awaiter(this, void 0, void 0, function* () {
-            const query = "INSERT INTO posts (date, title,description,body,img,category,postedBy) VALUES ($1, $2, $3, $4, $5, $6, $7)";
+            const query = "INSERT INTO posts (title,description,body,img,category,postedBy) VALUES ($1, $2, $3, $4, $5, $6)";
             yield db_1.default.query(query, [
-                post.date,
                 post.title,
                 post.description,
                 post.body,

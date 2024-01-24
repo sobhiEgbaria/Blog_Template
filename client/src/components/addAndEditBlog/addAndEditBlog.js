@@ -2,12 +2,12 @@ import "./addAndEditBlog.css";
 import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { BlogContext } from "../../providers/blog-providers";
-import img from "./Blog.jpg";
 
 export const AddAndEditBlog = ({
   buttonText,
   title,
   description,
+  body,
   hederTitle,
   EditedBlogId,
 }) => {
@@ -16,6 +16,9 @@ export const AddAndEditBlog = ({
 
   const [newBlogTitle, setNewBlogTitle] = useState(title);
   const [newBlogDescription, setNewBlogDescription] = useState(description);
+  const [newBlogBody, setNewBlogBody] = useState(body);
+  const [newBlogImage, setNewBlogImage] = useState("");
+  const [newBlogSelect, setNewBlogSelect] = useState("blog category");
 
   const scrollWin = () => {
     window.scrollTo(0, 700);
@@ -27,11 +30,11 @@ export const AddAndEditBlog = ({
 
   const handleOnClickAddBlog = () => {
     addBlog({
-      id: Date.now(),
       title: newBlogTitle,
-      date: new Date().toLocaleDateString("en-ZA"),
       description: newBlogDescription,
-      img: img,
+      body: newBlogBody,
+      img: newBlogImage,
+      category: newBlogSelect,
     });
     //clear the input and the text area
     setNewBlogTitle("");
@@ -46,12 +49,22 @@ export const AddAndEditBlog = ({
     scrollWin();
   };
 
-  const handelInput = (event) => {
+  const handelTitle = (event) => {
     setNewBlogTitle(event.target.value);
   };
 
-  const handelText = (event) => {
+  const handelDescription = (event) => {
     setNewBlogDescription(event.target.value);
+  };
+
+  const handelBody = (event) => {
+    setNewBlogBody(event.target.value);
+  };
+  const handelImage = (event) => {
+    setNewBlogImage(event.target.value);
+  };
+  const handelSelect = (event) => {
+    setNewBlogSelect(event.target.value);
   };
 
   return (
@@ -68,21 +81,58 @@ export const AddAndEditBlog = ({
                 value={newBlogTitle}
                 type="text"
                 placeholder="Blog Title"
-                onChange={handelInput}
+                onChange={handelTitle}
               />
             </div>
             <div>
               <textarea
                 value={newBlogDescription}
                 className="addBlogText"
-                name="describtion"
+                name="description"
+                id=""
+                cols="5"
+                rows="5"
+                placeholder="Blog Description"
+                onChange={handelDescription}
+              ></textarea>
+            </div>
+            <div>
+              <textarea
+                value={newBlogBody}
+                className="addBlogText"
+                name="body"
                 id=""
                 cols="10"
                 rows="10"
-                placeholder="Blog Description"
-                onChange={handelText}
+                placeholder="Blog body"
+                onChange={handelBody}
               ></textarea>
             </div>
+
+            <div>
+              <input
+                className="addBlogInput"
+                value={newBlogImage}
+                type="text"
+                placeholder="Insert Image URL"
+                onChange={handelImage}
+              />
+            </div>
+            <div className="category">
+              <label for="pick-one">Category</label>
+              <select
+                value={newBlogSelect}
+                onChange={handelSelect}
+                id="pick-one"
+              >
+                <option value="Programming Languages">
+                  Programming Languages
+                </option>
+                <option value="CS">CS</option>
+                <option value="TOOLS">TOOLS</option>
+              </select>
+            </div>
+
             <button
               // to pik create or edit blog
               onClick={
