@@ -57,7 +57,9 @@ class PostController {
     }
     getAllPost(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            const limit = req.query.limit;
+            const limit = req.query;
+            const limit2 = req.query;
+            console.log(limit2);
             try {
                 const posts = yield this.postBL.getALLPost(limit);
                 const postArray = [];

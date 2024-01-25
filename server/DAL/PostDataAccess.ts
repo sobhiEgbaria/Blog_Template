@@ -39,8 +39,19 @@ export class PostDataAccess implements DataAccess<Post> {
   }
 
   async getAll(limit: any): Promise<any> {
-    const query = "SELECT * FROM posts LIMIT $1";
-    const result = await pool.query(query, [limit]);
+    let term = limit.limit;
+    const { title } = limit;
+
+    let query = "SELECT * FROM posts LIMIT $1";
+    console.log(title);
+    console.log(limit);
+
+    if (title) {
+      term = `%${limit.title}%`;
+
+      query = `SELECT * FROM posts WHERE title LIKE $1`;
+    }
+    const result = await pool.query(query, [term]);
 
     if (result.rows.length === 0) {
       throw new Error(`Posts not found`);

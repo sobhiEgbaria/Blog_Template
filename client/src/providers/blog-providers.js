@@ -7,7 +7,7 @@ export const BlogProvider = ({ children }) => {
   // we use 2 state to keep the full data after filtering the blogs
   const [data, setData] = useState([]); // storing the filtered
   const [fullData, setFullData] = useState(data);
-  const [postNumber, setPostNumber] = useState(1);
+  const [postNumber, setPostNumber] = useState(15);
   const { user } = useContext(AuthContext);
 
   const fetchPosts = async () => {
@@ -20,10 +20,6 @@ export const BlogProvider = ({ children }) => {
       console.log(`${error.message}`);
     }
   };
-
-  useEffect(() => {
-    fetchPosts();
-  }, [data]);
 
   const addBlog = (post) => {
     const newPost = {
@@ -77,19 +73,28 @@ export const BlogProvider = ({ children }) => {
     });
   };
 
-  const searchBlog = (term) => {
+  const searchBlog = async (term) => {
     if (term !== "") {
-      const filteredData = data.filter((blog) => {
-        return blog.title.toLowerCase().includes(term.toLowerCase());
-      });
-
-      setData([...filteredData]);
+      try {
+        const response = await fetch(
+          `http://localhost:3000/posts?title=${term}`
+        );
+        console.log("get done");
+        setData(await response.json());
+      } catch (error) {
+        console.log(`${error.message}`);
+        console.log("not done");
+      }
     }
 
     if (term === "") {
-      setData([...data]);
+      fetchPosts();
     }
   };
+
+  useEffect(() => {
+    fetchPosts();
+  }, [postNumber]);
 
   return (
     <BlogContext.Provider
