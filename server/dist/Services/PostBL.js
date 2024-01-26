@@ -33,15 +33,6 @@ class PostBL {
             return Post;
         });
     }
-    filterByTitle(title) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const Post = yield this.postDataAccess.filterByTitle(title);
-            if (!Post) {
-                throw new Error(`Post with title ${title} not found`);
-            }
-            return Post;
-        });
-    }
     getALLPost(limit) {
         return __awaiter(this, void 0, void 0, function* () {
             const Posts = yield this.postDataAccess.getAll(limit);

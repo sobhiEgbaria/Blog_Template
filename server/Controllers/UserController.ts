@@ -7,7 +7,12 @@ export class UserController {
 
   async addUser(req: Request, res: Response) {
     const userData = req.body;
-    const user = new User(userData.id, userData.username, userData.email);
+    const user = new User(
+      userData.id,
+      userData.username,
+      userData.email,
+      userData.status
+    );
     try {
       await this.userBL.addUser(user);
       res.status(201).send({ message: `User created successfully` });

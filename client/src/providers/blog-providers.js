@@ -4,9 +4,8 @@ import { AuthContext } from "./AuthProviders";
 export const BlogContext = createContext(null);
 
 export const BlogProvider = ({ children }) => {
-  // we use 2 state to keep the full data after filtering the blogs
-  const [data, setData] = useState([]); // storing the filtered
-  const [fullData, setFullData] = useState(data);
+  const [data, setData] = useState([]);
+  const [users, setUsers] = useState([]);
   const [postNumber, setPostNumber] = useState(15);
   const { user } = useContext(AuthContext);
 
@@ -79,11 +78,9 @@ export const BlogProvider = ({ children }) => {
         const response = await fetch(
           `http://localhost:3000/posts?title=${term}`
         );
-        console.log("get done");
         setData(await response.json());
       } catch (error) {
         console.log(`${error.message}`);
-        console.log("not done");
       }
     }
 
@@ -91,6 +88,19 @@ export const BlogProvider = ({ children }) => {
       fetchPosts();
     }
   };
+
+  const fetchUsers = async () => {
+    try {
+      const response = await fetch(`http://localhost:3000/users`);
+      setUsers(await response.json());
+    } catch (error) {
+      console.log(`${error.message}`);
+    }
+  };
+
+  useEffect(() => {
+    fetchUsers();
+  }, []);
 
   useEffect(() => {
     fetchPosts();
@@ -100,6 +110,7 @@ export const BlogProvider = ({ children }) => {
     <BlogContext.Provider
       value={{
         data,
+        users,
         addBlog,
         searchBlog,
         deleteBlogById,

@@ -22,7 +22,7 @@ class UserController {
     addUser(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const userData = req.body;
-            const user = new User_1.default(userData.id, userData.username, userData.email);
+            const user = new User_1.default(userData.id, userData.username, userData.email, userData.status);
             try {
                 yield this.userBL.addUser(user);
                 res.status(201).send({ message: `User created successfully` });

@@ -14,7 +14,7 @@ export const LandingPage = () => {
           <p>
             Free for the design community.{" "}
             <Link className="cardLink" to={`/HomePage`}>
-              &nbsp; Home Page <i class="fa-solid fa-house-chimney"></i>
+              &nbsp; Home Page <i className="fa-solid fa-house-chimney"></i>
             </Link>
           </p>
         </div>

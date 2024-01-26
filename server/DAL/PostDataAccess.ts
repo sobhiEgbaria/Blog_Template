@@ -27,24 +27,11 @@ export class PostDataAccess implements DataAccess<Post> {
     return result.rows[0];
   }
 
-  async filterByTitle(title: string): Promise<Post> {
-    const query = `SELECT * FROM posts WHERE title like $1%`;
-    const result = await pool.query(query, [title]);
-
-    if (result.rows.length === 0) {
-      throw new Error(`Post not found`);
-    }
-
-    return result.rows[0];
-  }
-
   async getAll(limit: any): Promise<any> {
     let term = limit.limit;
     const { title } = limit;
 
     let query = "SELECT * FROM posts LIMIT $1";
-    console.log(title);
-    console.log(limit);
 
     if (title) {
       term = `%${limit.title}%`;

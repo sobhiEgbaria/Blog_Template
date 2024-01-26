@@ -25,14 +25,14 @@ export const BlogCard = ({ img, title, description, date, id }) => {
               <i
                 onClick={handelBookMarkClick}
                 id="icon_bookmark"
-                class="fa-solid fa-bookmark"
+                className="fa-solid fa-bookmark"
                 style={{ color: "#4FFFB0" }}
               ></i>
             ) : (
               <i
                 onClick={handelBookMarkClick}
                 id="icon_bookmark"
-                class="fa-regular fa-bookmark"
+                className="fa-regular fa-bookmark"
               ></i>
             )}
 
@@ -43,7 +43,7 @@ export const BlogCard = ({ img, title, description, date, id }) => {
             {description}
             <span>
               <Link onClick={scrollWin} className="cardLink" to={`/${id}`}>
-                &nbsp; Read More<i class="fa-solid fa-angles-right"></i>
+                &nbsp; Read More<i className="fa-solid fa-angles-right"></i>
               </Link>
             </span>
             <div>
@@ -51,19 +51,19 @@ export const BlogCard = ({ img, title, description, date, id }) => {
                 <i
                   onClick={handelLikeClick}
                   id="icon"
-                  class="fa-solid fa-heart"
+                  className="fa-solid fa-heart"
                   style={{ color: "red" }}
                 ></i>
               ) : (
                 <i
                   onClick={handelLikeClick}
                   id="icon"
-                  class="fa-regular fa-heart"
+                  className="fa-regular fa-heart"
                 ></i>
               )}
 
-              <i id="icon" class="fa-regular fa-message"></i>
-              <i id="icon" class="fa-regular fa-paper-plane"></i>
+              <i id="icon" className="fa-regular fa-message"></i>
+              <i id="icon" className="fa-regular fa-paper-plane"></i>
             </div>
           </p>
         </div>

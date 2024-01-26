@@ -20,11 +20,7 @@ router.get(
   async (req: Request, res: Response) =>
     await postController.getAllPost(req, res)
 );
-router.get(
-  "/title",
-  async (req: Request, res: Response) =>
-    await postController.filterByTitle(req, res)
-);
+
 router.put(
   "/:id",
   async (req: Request, res: Response) =>
