@@ -40,9 +40,6 @@ export class PostDataAccess implements DataAccess<Post> {
     }
     const result = await pool.query(query, [term]);
 
-    if (result.rows.length === 0) {
-      throw new Error(`Posts not found`);
-    }
     return result.rows;
   }
 
