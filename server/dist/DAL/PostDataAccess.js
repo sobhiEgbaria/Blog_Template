@@ -48,9 +48,6 @@ class PostDataAccess {
                 query = `SELECT * FROM posts WHERE title LIKE $1`;
             }
             const result = yield db_1.default.query(query, [term]);
-            // if (result.rows.length === 0) {
-            //   throw new Error(`Posts not found`);
-            // }
             return result.rows;
         });
     }
