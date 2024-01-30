@@ -10,7 +10,7 @@ export const EditBlogPage = () => {
   const { data } = useContext(BlogContext);
 
   const params = useParams();
-  const id = params.id;
+  const id = parseInt(params.id);
 
   const blog = data.find((item) => {
     return item.id === id;
