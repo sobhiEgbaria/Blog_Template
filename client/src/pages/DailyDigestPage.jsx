@@ -14,8 +14,8 @@ export const DailyDigestPage = () => {
     <>
       <NavBar />
       <HeaderContent
-        title="Daily Digest"
-        description="A description of the respective category goes right here. Be as expressive as possible, but in brief."
+        title="Programming"
+        description="Learning about programming languages is a continuous journey, and staying updated"
       />
       <ListOfBlogs data={data} />
       <MoreArticleButton />

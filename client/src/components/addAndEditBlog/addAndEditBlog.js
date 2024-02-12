@@ -133,9 +133,7 @@ export const AddAndEditBlog = ({
                 onChange={handelSelect}
                 id="pick-one"
               >
-                <option value="Programming Languages">
-                  Programming Languages
-                </option>
+                <option value="Programming">Programming</option>
                 <option value="CS">CS</option>
                 <option value="TOOLS">TOOLS</option>
               </select>

@@ -26,6 +26,7 @@ export const SingleBlogPage = () => {
         img={blog.img}
         description={blog.description}
         title={blog.title}
+        body={blog.body}
         deleteBlogById={deleteBlogById}
       />
       <ListOfBlogs data={data.slice(0, 3)} />

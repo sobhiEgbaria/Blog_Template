@@ -5,7 +5,7 @@
 .BlogHeaderContent {
   max-width: 1480px;
   background-color: rgba(220, 220, 220, 0.196);
-  height: 650px;
+  height: 850px;
   padding: 50px 10px 10px 10px;
   margin-bottom: 100px;
   overflow: auto;
@@ -35,7 +35,7 @@
 
 .content_frame .form {
   width: 790px;
-  height: 420px;
+  height: 620px;
   margin: 20px auto auto auto;
   text-align: center;
   align-items: center;
@@ -44,7 +44,7 @@
   align-items: center;
   background-color: rgba(220, 220, 220, 0.696);
 
-  overflow: auto;
+  /* overflow: auto; */
 }
 
 .content_frame p {

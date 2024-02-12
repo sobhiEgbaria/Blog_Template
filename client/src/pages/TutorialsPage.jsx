@@ -14,8 +14,8 @@ export const TutorialsPage = () => {
     <>
       <NavBar />
       <HeaderContent
-        title="Tutorials"
-        description="A description of the respective category goes right here. Be as expressive as possible, but in brief."
+        title="Tools"
+        description="Software developers, aiding in the creation, testing, and debugging of applications"
       />
       <ListOfBlogs data={data} />
       <MoreArticleButton />

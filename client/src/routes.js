@@ -25,27 +25,27 @@ export const router = createBrowserRouter([
         element: <HomePage />,
       },
       {
-        path: "/DailyDigest",
+        path: "/Programming",
         element: <DailyDigestPage />,
       },
       {
-        path: "/DesignTools",
+        path: "/CS",
         element: <DesignToolsPage />,
       },
       {
-        path: "/Tutorials",
+        path: "/Tools",
         element: <TutorialsPage />,
       },
       {
-        path: `/Tutorials/:id`,
+        path: `/Tools/:id`,
         element: <SingleBlogPage />,
       },
       {
-        path: `/DailyDigest/:id`,
+        path: `/Programming/:id`,
         element: <SingleBlogPage />,
       },
       {
-        path: `/DesignTools/:id`,
+        path: `/CS/:id`,
         element: <SingleBlogPage />,
       },
       {

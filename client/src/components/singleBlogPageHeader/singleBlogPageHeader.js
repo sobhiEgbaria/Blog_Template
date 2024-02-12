@@ -7,6 +7,7 @@ export const SingleBlogPageHeader = ({
   title,
   id,
   deleteBlogById,
+  body,
 }) => {
   const handelDeleteClick = () => {
     deleteBlogById(id);
@@ -24,6 +25,9 @@ export const SingleBlogPageHeader = ({
           <h2>{title}</h2>
         </div>
         <div>
+          <p className="singlePageDescription">{description}</p>
+        </div>
+        <div>
           <div className="edit_remove_icons">
             <Link to="/HomePage" onClick={handelDeleteClick}>
               <i className="fa-solid fa-trash"></i>
@@ -35,7 +39,7 @@ export const SingleBlogPageHeader = ({
           <img className="singlePageImg" src={img} alt="not_found" />
         </div>
         <div>
-          <p className="singlePageDescription">{description}</p>
+          <p className="singlePageBody">{body}</p>
         </div>
       </div>
     </>

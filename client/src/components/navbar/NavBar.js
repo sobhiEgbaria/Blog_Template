@@ -1,11 +1,11 @@
-import logo from "./imgs/logo.png";
+import logo from "./imgs/Black_Logo.png";
 import "../navbar/NavBar.css";
 import { Link } from "react-router-dom";
-import { AuthContext } from "../../providers/AuthProviders";
+import { AuthContext } from "../../providers/AuthProvider";
 import { useContext } from "react";
 
 export const NavBar = () => {
-  const { user, signIn, logOut } = useContext(AuthContext);
+  const { user, signOut } = useContext(AuthContext);
 
   // go to the top of the page to show the right content
   const handelScroll = () => {
@@ -23,14 +23,14 @@ export const NavBar = () => {
         <div className="right_elements">
           <ul>
             <li>
-              <Link to="/DailyDigest">Daily Digest</Link>
+              <Link to="/Programming">Programming</Link>
             </li>
             <li>
-              <Link to="/DesignTools">Design Tools</Link>
+              <Link to="/CS">CS</Link>
             </li>
 
             <li>
-              <Link to="/Tutorials">Tutorials</Link>
+              <Link to="/Tools">Tools</Link>
             </li>
           </ul>
 
@@ -40,15 +40,16 @@ export const NavBar = () => {
                 <Link onClick={handelScroll} to="/AddBlog" id="newBlog">
                   New Blog <i className="fa-solid fa-plus"></i> &nbsp; &nbsp;
                 </Link>
-                <Link className="add_blog" onClick={logOut} to="/">
-                  {user.userName}{" "}
-                  <i className="fa-solid fa-right-from-bracket"></i>
+                <Link
+                  className="add_blog"
+                  onClick={() => signOut()}
+                  to="/HomePage"
+                >
+                  {user.name} <i className="fa-solid fa-right-from-bracket"></i>
                 </Link>
               </>
             ) : (
-              <button className="subsBtn" onClick={signIn}>
-                SingIn
-              </button>
+              <div id="signInDiv"></div>
             )}
           </span>
         </div>

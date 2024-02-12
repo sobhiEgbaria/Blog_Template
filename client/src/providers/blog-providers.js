@@ -1,18 +1,18 @@
 import { createContext, useEffect, useState, useContext } from "react";
-import { AuthContext } from "./AuthProviders";
+import { AuthContext } from "./AuthProvider";
 
 export const BlogContext = createContext(null);
 
 export const BlogProvider = ({ children }) => {
   const [data, setData] = useState([]);
   const [users, setUsers] = useState([]);
-  const [postNumber, setPostNumber] = useState(15);
+  const [postNumber, setPostNumber] = useState(9);
   const { user } = useContext(AuthContext);
 
   const fetchPosts = async () => {
     try {
       const response = await fetch(
-        `http://localhost:3000/posts?limit=${postNumber}`
+        `http://localhost:3001/posts?limit=${postNumber}`
       );
       setData(await response.json());
     } catch (error) {
@@ -30,7 +30,7 @@ export const BlogProvider = ({ children }) => {
       postedBy: "sobhi",
     };
 
-    fetch(`http://localhost:3000/posts`, {
+    fetch(`http://localhost:3001/posts`, {
       method: "POST",
       body: JSON.stringify(newPost),
       headers: {
@@ -50,7 +50,7 @@ export const BlogProvider = ({ children }) => {
       category: post.category,
     };
 
-    fetch(`http://localhost:3000/posts/${post.id}`, {
+    fetch(`http://localhost:3001/posts/${post.id}`, {
       method: "PUT",
       body: JSON.stringify(updates),
       headers: {
@@ -62,7 +62,7 @@ export const BlogProvider = ({ children }) => {
   };
 
   const deleteBlogById = (id) => {
-    fetch(`http://localhost:3000/posts/${id}`, {
+    fetch(`http://localhost:3001/posts/${id}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
@@ -76,7 +76,7 @@ export const BlogProvider = ({ children }) => {
     if (term !== "") {
       try {
         const response = await fetch(
-          `http://localhost:3000/posts?title=${term}`
+          `http://localhost:3001/posts?title=${term}`
         );
         setData(await response.json());
       } catch (error) {
@@ -91,7 +91,7 @@ export const BlogProvider = ({ children }) => {
 
   const fetchUsers = async () => {
     try {
-      const response = await fetch(`http://localhost:3000/users`);
+      const response = await fetch(`http://localhost:3001/users`);
       setUsers(await response.json());
     } catch (error) {
       console.log(`${error.message}`);

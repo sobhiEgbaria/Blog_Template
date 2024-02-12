@@ -1,6 +1,6 @@
 import "../landingPge/LandingPage.css";
 import { Link } from "react-router-dom";
-import img from "./Vector.png";
+import img from "./blogteclogo.png";
 import img2 from "./Group 98.png";
 import img3 from "./Group 99.png";
 
@@ -10,9 +10,9 @@ export const LandingPage = () => {
       <div className="content">
         <img src={img} alt="" className="logo" />
         <div>
-          <h3>— a minimal blog template design.</h3>
+          <h3>Welcome to our Tech-centric haven</h3>
           <p>
-            Free for the design community.{" "}
+            Explore the boundless realm of tech{" "}
             <Link className="cardLink" to={`/HomePage`}>
               &nbsp; Home Page <i className="fa-solid fa-house-chimney"></i>
             </Link>

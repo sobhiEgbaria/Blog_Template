@@ -1,7 +1,7 @@
 .singlePageContainer {
   margin: 10px 80px;
   max-width: 1480px;
-  height: 800px;
+  height: 1100px;
   top: 502px;
   padding: 0px, 250px, 100px, 250px;
   gap: 10px;
@@ -30,9 +30,16 @@
 }
 .singlePageContainer .singlePageDescription {
   color: black;
-  width: 50%;
+  width: 60%;
   margin: auto;
   text-align: center;
+}
+
+.singlePageContainer .singlePageBody {
+  color: black;
+  width: 90%;
+  margin: auto;
+  text-align: left;
 }
 
 .edit_remove_icons {
