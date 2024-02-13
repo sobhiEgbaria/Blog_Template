@@ -89,18 +89,18 @@ export const BlogProvider = ({ children }) => {
     }
   };
 
-  const fetchUsers = async () => {
-    try {
-      const response = await fetch(`http://localhost:3001/users`);
-      setUsers(await response.json());
-    } catch (error) {
-      console.log(`${error.message}`);
-    }
-  };
+  // const fetchUsers = async () => {
+  //   try {
+  //     const response = await fetch(`http://localhost:3001/users`);
+  //     setUsers(await response.json());
+  //   } catch (error) {
+  //     console.log(`${error.message}`);
+  //   }
+  // };
 
-  useEffect(() => {
-    fetchUsers();
-  }, []);
+  // useEffect(() => {
+  //   fetchUsers();
+  // }, []);
 
   useEffect(() => {
     fetchPosts();
